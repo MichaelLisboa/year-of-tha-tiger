@@ -21,10 +21,17 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
         <a.div
             {...bind(current)}
             className={`uk-box-shadow-medium`}
-            style={{transform: interpolate([rot, scale], trans), touchAction: "pan-x" }}>
+            style={{
+                width: "auto",
+                border: "#E95934 12px solid",
+                borderRadius: "36px",
+                transform: interpolate([rot, scale], trans),
+                touchAction: "pan-x"
+            }}>
             <a.div
                 style={{
                     height: viewportHeight,
+                    width: "auto",
                     backgroundImage: `url('${image[0]}')`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
