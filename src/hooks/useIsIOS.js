@@ -29,7 +29,6 @@ export default function useIsIOS() {
 
     useEffect(() => {
         setIsIOS(checkForIOS());
-        return() => console.log("CLEANUP INSTALL PROMPT", isIOS);
     }, []);
 
     return isIOS;

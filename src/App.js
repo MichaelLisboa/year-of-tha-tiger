@@ -1,6 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
-import { useSpring, animated as a, interpolate } from "react-spring";
-import { useDrag, useScroll } from "@use-gesture/react";
+import React, { useState, useEffect } from "react";
 import useIsIOS from "./hooks/useIsIOS"
 import {InstallPWA} from "./components/InstallPWA"
 import Walkthrough from "./components/Walkthrough"
@@ -17,17 +15,17 @@ function importAll(r) {
     }
 
 const App = () => {
-    const { isIPhone, isIPad, isIOS, isSafari, prompt } = useIsIOS();
-    const [walkthrough, setWalkthrough] = useState();
+    const { prompt } = useIsIOS();
     const [preload, setPreload] = useState(true);
     const [mobile, setMobile] = useState(false);
     const [images, setImages] = useState([])
-    const [searchExpanded, setSearchExpanded] = useState(true)
+
+    console.log(elements)
 
     useEffect(
         () => {
             setImages(importAll(require.context('./images/characters', false, /\.(png|jpe?g|svg)$/)));
-        }, [walkthrough]
+        }, []
     )
 
     useEffect(
@@ -57,15 +55,6 @@ const App = () => {
         }, []
     )
 
-    const bind = useDrag(({ args: [index], down, movement: [my], distance, direction: [x, y], delta: [yDelta], velocity }) => {
-        const trigger = velocity > 0.2
-        const gotDelta = Math.abs(yDelta) >= 1
-        let dir = y < 0 ? -1 : 1
-        // if(!down && trigger) {
-        //     setDataExpanded(dir)
-        // };
-    })
-
     return (
         <>
         <div id="loadingOverlayPWA"
@@ -80,7 +69,7 @@ const App = () => {
             }}/>
         <nav style={{zIndex: "100000"}} className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
             <div className="uk-navbar-center uk-padding-small">
-                <img src={logo} className="uk-margin-remove" width="48" />
+                <img src={logo} alt="Year of tha Tigah" className="uk-margin-remove" width="48" />
             </div>
         </nav>
         <main>

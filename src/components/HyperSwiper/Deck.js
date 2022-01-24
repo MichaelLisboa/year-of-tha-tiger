@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSprings, animated as a, interpolate } from "react-spring";
-import { useGesture, onDrag, useDrag } from "@use-gesture/react";
+import { useGesture } from "@use-gesture/react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Card from "./Card";
 import SwipeNav from "./SwipeNav";
@@ -27,11 +27,9 @@ const from = i => ({
 });
 
 const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
-    const { height, width } = useWindowDimensions();
+    const { height } = useWindowDimensions();
     const [isSwiped, setIsSwiped] = useState({dir: 0, value: ""});
-    const [isLoading, setIsLoading] = useState();
-    const [deck, setDeck] = useState(cards);
-    const [card, setCard] = useState(deck.length-1);
+    const [card, setCard] = useState(cards.length-1);
     const [gone] = useState(() => new Set());
     const [active] = useState(() => new Set([card, card-1]));
 
@@ -47,7 +45,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
         return res;
     }
 
-    const [spring, setSpring] = useSprings(deck.length, i => ({
+    const [spring, setSpring] = useSprings(cards.length, i => ({
         ...to(i),
         from: from(i)
     }));
@@ -55,7 +53,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
     const bind = useGesture(
         {
             onDrag: ({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity: [xVel] }) => {
-                const trigger = xDir != 0 && xVel > 0.2
+                const trigger = xDir !== 0 && xVel > 0.2
                 const dir = xDir < 0 ? -1 : 1
                 if (!down && trigger) {
                     gone.add(index);
@@ -116,7 +114,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
         console.log("CHANGE", e.currentTarget.value)
     }
 
-    if(deck.length === 0 || isLoading) {
+    if(cards.length === 0) {
         return <div />
     }
 
@@ -136,7 +134,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
                             transform: interpolate([x, y], (x, y) => `translate3d(${x}px, ${y}px, 0)`)
                         }}>
                         <Card
-                            card={deck[i]}
+                            card={cards[i]}
                             bind={bind}
                             active={active}
                             current={i}
@@ -169,7 +167,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
                 </div>
             </div>
             <SwipeNav
-                deck={deck}
+                deck={cards}
                 cardIndex={card}
                 bind={bind}
                 forceSwipe={forceSwipe}

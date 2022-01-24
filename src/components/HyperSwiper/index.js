@@ -23,7 +23,7 @@ const HyperSwiper = ({preload, zodiac: data, images, ...props}) => {
             .catch(err => {
                 console.log("FAILED", err)
             })
-        }, [isEmpty]
+        }, [isEmpty, data]
     )
 
     return (

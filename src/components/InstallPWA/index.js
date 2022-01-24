@@ -9,7 +9,7 @@ export const InstallPWA = ({...props}) => {
     useEffect(
         () => {
             setNotificationOpen(true)
-        }, []
+        }, [setNotificationOpen]
     )
     return (
         <Notification

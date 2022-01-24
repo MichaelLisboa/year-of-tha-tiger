@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { useSpring, animated as a } from "react-spring"
 import style from "./Walkthrough.module.css";
-import logo from "../../images/tiger-icon.png"
 
 const Walkthrough = ({preload, setPreload, mobile}) => {
     const coverScreenStyle = useSpring({
