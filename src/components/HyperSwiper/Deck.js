@@ -3,7 +3,6 @@ import { useSprings, animated as a, interpolate } from "react-spring";
 import { useGesture, onDrag, useDrag } from "@use-gesture/react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Card from "./Card";
-import SwipeAlert from "./SwipeAlert";
 import SwipeNav from "./SwipeNav";
 import style from "./Deck.module.css";
 
@@ -128,9 +127,6 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
             <div
                 style={{height: height*0.7}}
                 className={`${style.deck}`}>
-                <SwipeAlert
-                    isSwiped={isSwiped}
-                    choice={isSwiped} />
                 {spring.map(({ x, y, rot, scale }, i) =>
                     <a.div
                         className={`${style.cardContainer}`}
