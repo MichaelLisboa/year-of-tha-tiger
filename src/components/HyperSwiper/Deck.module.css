@@ -117,7 +117,7 @@
   touch-action: pan-x;
 }
 
-.card::before {
+.card::after {
   content: "";
   position: absolute;
   border-radius: 12px;
@@ -170,9 +170,9 @@
 
 .cardBody {
   position: absolute;
-  bottom: 11px;
-  left: 11px;
-  right: 11px;
+  bottom: 13px;
+  left: 13px;
+  right: 13px;
   height: 20%;
   border-radius: 16px 16px 2px 2px;
   overflow: hidden;
