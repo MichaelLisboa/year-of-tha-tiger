@@ -54,7 +54,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
     const bind = useGesture(
         {
             onDrag: ({ args: [index], down, movement: [mx], distance, direction: [xDir], velocity: [xVel] }) => {
-                const trigger = xDir !== 0 && xVel > 0.2
+                const trigger = xDir !== 0 && xVel > 0.3
                 const dir = xDir < 0 ? -1 : 1
                 if (!down && trigger) {
                     gone.add(index);

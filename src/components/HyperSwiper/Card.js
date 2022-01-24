@@ -39,9 +39,6 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                 }}
                 className={`${style.card}`}>
                 <div style={{height: "100%"}}>
-                    <div className={`${style.cardHeader}`}>
-                        <h2>{card.name}</h2>
-                    </div>
                     <a.div
                         style={{
                             zIndex: "1",
