@@ -77,7 +77,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
         gone.add(card);
         const down = false;
         const {xDelta, velocity} = 0;
-        setSpring(i => {
+        setSpring.start(i => {
             if (card !== i) return;
             const isGone = gone.has(card);
             const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0 ;
@@ -123,12 +123,12 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
         <div
             style={{height: height-24}}
             className={`${style.deckContainer}`}>
-            <SwipeAlert
-                isSwiped={isSwiped}
-                choice={isSwiped} />
             <div
                 style={{height: height*0.7}}
                 className={`${style.deck}`}>
+                <SwipeAlert
+                    isSwiped={isSwiped}
+                    choice={isSwiped} />
                 {spring.map(({ x, y, rot, scale }, i) =>
                     <a.div
                         className={`${style.cardContainer}`}
