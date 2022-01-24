@@ -49,7 +49,6 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                                 color: "#fff",
                                 fontWeight: "600",
                                 fontSize: "1.1rem",
-                                textDecoration: "none",
                                 border: "1px solid rgba(255, 255, 255, 0.5)",
                                 borderRadius: "8px",
                                 paddingLeft: "24px",

@@ -8,6 +8,7 @@ main {
   background: rgb(163, 41, 37);
 }
 
+*,
 a:focus,
 input:focus,
 select:focus,
