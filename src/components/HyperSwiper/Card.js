@@ -23,8 +23,8 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
             className={`uk-box-shadow-medium`}
             style={{
                 width: "auto",
-                border: "#fff 8px solid",
-                borderRadius: "24px",
+                border: "#fff 4px solid",
+                borderRadius: "20px",
                 transform: interpolate([rot, scale], trans),
                 touchAction: "pan-x"
             }}>
