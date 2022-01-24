@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from "react";
 import { useSpring, animated as a } from "react-spring"
-import moment from "moment";
 import style from "./Walkthrough.module.css";
 import logo from "../../images/tiger-icon.png"
 
 const Walkthrough = ({preload, setPreload, mobile}) => {
-    const today = moment().toDate();
-
     const coverScreenStyle = useSpring({
         position: "fixed",
         top: preload ? "0%" : "100%",
@@ -18,22 +15,6 @@ const Walkthrough = ({preload, setPreload, mobile}) => {
         zIndex: "1005",
         config: { mass: 1, tension: 600, friction: 50 },
     });
-
-    useEffect(
-        () => {
-            const loader = document.getElementById('walkthroughPWA')
-            if (!loader) return;
-            if(!preload) {
-                let timer2 = setTimeout(() => loader.remove(), 1300)
-                if (prompt && "localStorage" in window) {
-                    localStorage.setItem("WalkthroughNew", today);
-                }
-                return () => {
-                    clearTimeout(timer2)
-                }
-            }
-        }, [preload]
-    )
 
     return (
         <a.div id="walkthroughPWA" style={coverScreenStyle}>

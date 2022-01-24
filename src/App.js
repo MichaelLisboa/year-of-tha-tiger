@@ -38,16 +38,17 @@ const App = () => {
                 UIkit.use(Icons);
 
                 if(window.innerWidth <= 640) {setMobile(true)}
-                setWalkthrough(localStorage.getItem("WalkthroughNew"))
                 const loader = document.getElementById('loadingOverlayPWA')
-                // if(location.pathname !== '/' || !navigator.standalone) {
-                //     loader.remove()
-                // }
                 if (!loader) return;
-                // let timer1 = setTimeout(() => setPreload(false), 1000)
-                let timer2 = setTimeout(() => loader.remove(), 1300)
+                let timer1 = setTimeout(() => {
+                    loader.classList.add("fadeOut")
+                }, 1000)
+
+                let timer2 = setTimeout(() => {
+                    loader.remove()
+                }, 2500)
                 return () => {
-                    // clearTimeout(timer1)
+                    clearTimeout(timer1)
                     clearTimeout(timer2)
                 }
             } catch (e) {
@@ -55,17 +56,6 @@ const App = () => {
             }
         }, []
     )
-
-    const coverScreenStyle = useSpring({
-        width: "100%",
-        height: "100%",
-        opacity: preload ? "1" : "0",
-        position: "absolute",
-        top: "0",
-        left: "0",
-        zIndex: 10020,
-        backgroundColor: "rgb(163, 41, 37)"
-    });
 
     const bind = useDrag(({ args: [index], down, movement: [my], distance, direction: [x, y], delta: [yDelta], velocity }) => {
         const trigger = velocity > 0.2
@@ -78,13 +68,22 @@ const App = () => {
 
     return (
         <>
+        <div id="loadingOverlayPWA"
+            style={{
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                top: "0",
+                left: "0",
+                zIndex: 100020,
+                backgroundColor: "rgb(163, 41, 37)"
+            }}/>
         <nav style={{zIndex: "100000"}} className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
             <div className="uk-navbar-center uk-padding-small">
                 <img src={logo} className="uk-margin-remove" width="48" />
             </div>
         </nav>
         <main>
-            <a.div id="loadingOverlayPWA" style={coverScreenStyle} />
             <Walkthrough mobile={mobile} preload={preload} setPreload={setPreload} />
             <HyperSwiper preload={preload} zodiac={zodiac} images={images} />
             {prompt && <InstallPWA />}

@@ -28,3 +28,66 @@ textarea:focus {
     font-size: 24px !important;
   }
 }
+
+.fadeOut {
+  -webkit-animation: fadeoutfromone 1s ease-out forwards;
+  -moz-animation: fadeoutfromone 1s ease-out forwards;
+  -o-animation: fadeoutfromone 1s ease-out forwards;
+  animation: fadeoutfromone 1s ease-out forwards;
+}
+
+@-webkit-keyframes fadeoutfromone {
+  0% {
+    opacity: 1;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeoutfromone {
+  0% {
+    opacity: 1;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fadeoutfromone {
+  0% {
+    opacity: 1;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeoutfromone {
+  0% {
+    opacity: 1;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
