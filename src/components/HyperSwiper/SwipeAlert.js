@@ -36,7 +36,7 @@ export default function SwipeAlert({
         },
         to: async next => {
             await next({
-                delay: 500
+                delay: 200
             })
             await next({
                 top: "-10%",
