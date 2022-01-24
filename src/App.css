@@ -8,7 +8,9 @@ main {
   background: rgb(163, 41, 37);
 }
 
-*,
+*:focus,
+.card:focus,
+.cardBody:focus,
 a:focus,
 input:focus,
 select:focus,
