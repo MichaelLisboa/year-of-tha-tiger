@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSpring, animated as a, interpolate } from "react-spring";
+import { useSpring, animated as a, to as interpolate } from "react-spring";
 
 import style from "./Deck.module.css";
 const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;

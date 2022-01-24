@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSprings, animated as a, interpolate } from "react-spring";
+import { useSprings, animated as a, to as interpolate } from "react-spring";
 import { useGesture } from "@use-gesture/react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Card from "./Card";
@@ -59,7 +59,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
                     gone.add(index);
                     GetActiveCard(gone, dir)
                 }
-                setSpring(i => {
+                setSpring.start(i => {
                     if (index !== i) return
                     const isGone = gone.has(index)
                     const x = isGone ? (200 + window.innerWidth) * dir : down ? mx : 0
