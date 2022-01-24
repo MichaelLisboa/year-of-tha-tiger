@@ -1,0 +1,30 @@
+html,
+body,
+main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(163, 41, 37);
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+@media screen and (min-width: 640px) {
+  html,
+  .uk-h5 {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 680)) !important;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  html,
+  .uk-h5 {
+    font-size: 24px !important;
+  }
+}

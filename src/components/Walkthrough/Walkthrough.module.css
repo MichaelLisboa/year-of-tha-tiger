@@ -1,0 +1,23 @@
+.walkthroughContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(163, 41, 37);
+}
+
+.walkthroughContainer h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.walkthroughContainer p {
+  color: #fff;
+}
+
+.walkthroughContainer button {
+  font-size: 1rem !important;
+  color: #fff !important;
+}

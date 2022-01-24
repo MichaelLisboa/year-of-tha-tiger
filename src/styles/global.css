@@ -1,0 +1,488 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src:
+    local('Open Sans Italic'),
+    local('OpenSans-Italic'),
+    url('../static/fonts/open-sans-v17-latin-italic.woff2') format('woff2'),
+    url('../static/fonts/open-sans-v17-latin-italic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Open Sans Regular'),
+    local('OpenSans-Regular'),
+    url('../static/fonts/open-sans-v17-latin-regular.woff2') format('woff2'),
+    url('../static/fonts/open-sans-v17-latin-regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local('Open Sans SemiBold'),
+    local('OpenSans-SemiBold'),
+    url('../static/fonts/open-sans-v17-latin-600.woff2') format('woff2'),
+    url('../static/fonts/open-sans-v17-latin-600.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('Open Sans Bold'),
+    local('OpenSans-Bold'),
+    url('../static/fonts/open-sans-v17-latin-700.woff2') format('woff2'),
+    url('../static/fonts/open-sans-v17-latin-700.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local(''),
+    url('../static/fonts/maven-pro-v20-latin-500.woff2') format('woff2'),
+    url('../static/fonts/maven-pro-v20-latin-500.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local(''),
+    url('../static/fonts/maven-pro-v20-latin-600.woff2') format('woff2'),
+    url('../static/fonts/maven-pro-v20-latin-600.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local(''),
+    url('../static/fonts/maven-pro-v20-latin-700.woff2') format('woff2'),
+    url('../static/fonts/maven-pro-v20-latin-700.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 800;
+  src:
+    local(''),
+    url('../static/fonts/maven-pro-v20-latin-800.woff2') format('woff2'),
+    url('../static/fonts/maven-pro-v20-latin-800.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 900;
+  src:
+    local(''),
+    url('../static/fonts/maven-pro-v20-latin-900.woff2') format('woff2'),
+    url('../static/fonts/maven-pro-v20-latin-900.woff') format('woff');
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(77, 55, 83);
+}
+
+body {
+  overflow: auto;
+}
+
+@media (max-width: 960px) {
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  body.set-background {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+  }
+
+  .donate-modal p {
+    font-size: 85%;
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+main {
+  width: 100% !important;
+  height: 100%;
+  position: fixed;
+  display: block;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  background: rgb(77, 55, 83);
+  /* background: -moz-linear-gradient(324deg, rgba(68, 42, 74, 1) 20%, rgba(77, 55, 83, 1) 40%, rgba(93, 75, 99, 1) 80%);
+  background: -webkit-linear-gradient(324deg, rgba(68, 42, 74, 1) 20%, rgba(77, 55, 83, 1) 40%, rgba(93, 75, 99, 1) 80%);
+  background: linear-gradient(324deg, rgba(68, 42, 74, 1) 20%, rgba(77, 55, 83, 1) 40%, rgba(93, 75, 99, 1) 80%);
+  background-size: 800% 800%;
+  background-attachment: fixed;
+  -webkit-animation: brandgradientanim 10s ease-in-out infinite;
+  -moz-animation: brandgradientanim 10s ease-in-out infinite;
+  -o-animation: brandgradientanim 10s ease-in-out infinite;
+  animation: brandgradientanim 10s ease-in-out infinite; */
+}
+
+/* @-webkit-keyframes brandgradientanim {
+  0% { background-position: 52% 0%; }
+  50% { background-position: 49% 100%; }
+  100% { background-position: 52% 0%; }
+}
+
+@-moz-keyframes brandgradientanim {
+  0% { background-position: 52% 0%; }
+  50% { background-position: 49% 100%; }
+  100% { background-position: 52% 0%; }
+}
+
+@-o-keyframes brandgradientanim {
+  0% { background-position: 52% 0%; }
+  50% { background-position: 49% 100%; }
+  100% { background-position: 52% 0%; }
+}
+
+@keyframes brandgradientanim {
+  0% { background-position: 52% 0%; }
+  50% { background-position: 49% 100%; }
+  100% { background-position: 52% 0%; }
+} */
+
+p,
+h4,
+h5,
+li {
+  font-weight: 400 !important;
+  font-family: "Open Sans", "Helvetica", sans-serif !important;
+  font-kerning: normal !important;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-family: 'Open Sans', "Arial Black", "Helvetica", sans-serif;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-family: 'Open Sans', "Helvetica", "Arial", sans-serif !important;
+  font-weight: 400;
+  line-height: 1;
+}
+
+h3 {
+  font-weight: 600;
+  font-family: 'Maven Pro', "Helvetica", "Arial", sans-serif;
+  letter-spacing: -1px;
+  line-height: 1.875rem !important;
+}
+
+@media (min-width: 640px) {
+  h2.content-title {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+  }
+
+  .content-lead {
+    text-align: center;
+  }
+
+  h2 {
+    letter-spacing: -0.079rem;
+  }
+
+  h3 {
+    letter-spacing: -0.079rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .uk-text-lead {
+    font-size: 1.5em;
+  }
+
+  .uk-table .uk-text-small {
+    font-size: 0.7rem !important;
+  }
+
+  .uk-table h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+h6 {
+  font-size: 0.879rem !important;
+  font-family: 'Open Sans', "Helvetica", "Arial", sans-serif !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  font-weight: 400 !important;
+}
+
+small {
+  font-size: 0.7rem !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* small.uk-text-uppercase {
+  font-size: 10px;
+} */
+
+.price__tag {
+  font-size: 9px;
+  padding: 0 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.price__tag__short {
+  color: rgb(250, 160, 90) !important;
+  background-color: rgba(250, 160, 90, 0.1) !important;
+  border: 1px solid rgba(250, 160, 90, 0.8) !important;
+  text-decoration: none !important;
+}
+
+.price__tag__long {
+  color: rgb(74, 176, 215) !important;
+  background-color: rgba(74, 176, 215, 0.1) !important;
+  border: 1px solid rgba(74, 176, 215, 0.8) !important;
+  text-decoration: none !important;
+}
+
+.price__tag__disabled {
+  color: rgb(160, 160, 160) !important;
+  background-color: rgba(160, 160, 160, 0.1) !important;
+  border: 1px solid rgba(160, 160, 160, 0.5) !important;
+  text-decoration: none !important;
+}
+
+.radio__button__container {
+  position: relative;
+}
+
+.radio__button {
+  position: relative;
+  /* display: block; */
+}
+.radio__button label {
+  color: rgb(160, 160, 160);
+  background-color: rgba(160, 160, 160, 0.1);
+  border: 1px solid rgba(160, 160, 160, 0.5);
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  display: none;
+  position: absolute;
+}
+
+input[type="radio"]:checked + label.radio__button__long {
+  color: rgb(74, 176, 215);
+  background-color: rgba(74, 176, 215, 0.1);
+  border: 1px solid rgba(74, 176, 215, 0.8);
+}
+
+input[type="radio"]:checked + label.radio__button__short {
+  color: rgb(250, 160, 90);
+  background-color: rgba(250, 160, 90, 0.1);
+  border: 1px solid rgba(250, 160, 90, 0.8);
+}
+
+
+.uk-h1,
+.uk-h2,
+.uk-h3,
+.uk-h4 {
+  font-weight: 500 !important;
+}
+
+.uk-h6 {
+  font-size: 10px !important;
+  text-transform: uppercase !important;
+}
+
+h5 {
+  margin-bottom: 0 !important;
+  padding-bottom: 6px !important;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif !important;
+  font-weight: 600 !important;
+}
+
+h3.uk-section-title {
+  font-size: 1.35rem;
+  margin: 50px auto 35px !important;
+  font-weight: 400 !important;
+}
+
+.sc-only span {
+  font-size: 1 !important;
+  line-height: 1 !important;
+  text-indent: -1px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: -1000px;
+  overflow: hidden;
+  border: 0;
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+.uk-button {
+  border-radius: 4px;
+}
+
+.uk-button-text.cta-button {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 900;
+  color: #303030;
+  border-radius: 0;
+  display: inline-block;
+}
+
+.uk-button-text.cta-button:hover,
+.benefits-copy a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.uk-button-text.cta-button::after {
+  content: url('../images/icons/arrow-right.svg');
+  float: right;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  transition: margin 0.25s;
+}
+
+.uk-button-text.cta-button:hover::after,
+.benefits-copy a:hover::after {
+  content: url('../images/icons/arrow-right.svg');
+  float: right;
+  margin: 0 0 0 40px;
+  padding: 0;
+  display: inline-block;
+}
+
+.custom__card__loading {
+  background-color: rgba(255, 255, 255, 0.025);
+  height: 100%;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 23px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgb(77, 55, 83);
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(24px, 0);
+  }
+}

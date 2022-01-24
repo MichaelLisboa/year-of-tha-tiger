@@ -1,0 +1,80 @@
+#modal-root {
+  position: fixed;
+  z-index: 20000;
+}
+
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.35);
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 20000;
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100vh;
+}
+
+.modal-container h1::before {
+  content: '';
+  background-image: url('../../images/astro-logo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 80px !important;
+  width: 100%;
+  text-align: center;
+  display: block;
+  margin-bottom: 10%;
+}
+
+.fullscreen-card .uk-card {
+  padding-top: 24px !important;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fullscreen-card .uk-card-body {
+  height: 85%;
+  overflow-y: scroll !important;
+}
+
+.notification-card .uk-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 4px;
+  margin: auto 24px;
+}
+
+.modal-container .uk-card-footer {
+  position: absolute;
+  background-color: #fff;
+  height: 32px;
+  bottom: 24px;
+  left: 0;
+  right: 0;
+}
+
+.modal-close-button {
+  position: absolute;
+  z-index: 5;
+  right: 10px;
+}
+
+.fullscreen-card .modal-close-button {
+  top: 55px;
+}
+
+
+
+.notification-card .modal-close-button {
+  top: 10px;
+}
