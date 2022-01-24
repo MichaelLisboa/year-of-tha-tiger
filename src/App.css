@@ -14,8 +14,23 @@ main {
 a:focus,
 input:focus,
 select:focus,
-textarea:focus {
+textarea:focus,
+*:active,
+.card:active,
+.cardBody:active,
+a:active,
+input:active,
+select:active,
+textarea:active,
+*:hover,
+.card:hover,
+.cardBody:hover,
+a:hover,
+input:hover,
+select:hover,
+textarea:hover {
   outline: none;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 640px) {
