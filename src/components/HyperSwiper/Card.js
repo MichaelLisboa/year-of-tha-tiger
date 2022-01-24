@@ -8,7 +8,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
     const [storyExpanded, setStoryExpanded] = useState(false);
     const image = Object.values(images).filter(i => i.includes(card.name))
 
-    const {bodyHeight} = useSpring({
+    const {height} = useSpring({
         height: storyExpanded ? "40%" : "10%",
         config: {
             mass: 3,
@@ -38,9 +38,8 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                     <a.div
                         style={{
                             zIndex: "1",
-                            height: "10%",
                             cursor: "pointer",
-                            bodyHeight
+                            height
                         }}
                         onClick={() => setStoryExpanded(!storyExpanded)}
                         className={`${style.cardBody} uk-flex uk-flex-column uk-flex-middle`}>
