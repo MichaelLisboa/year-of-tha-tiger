@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Preloader from "../Preloader"
-import checkFortuneImage from "../../images/check-fortune-button.png"
+import { useSpring, animated as a, to as interpolate } from "react-spring";
+import { useGesture } from "@use-gesture/react";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import Preloader from "../Preloader";
+import checkFortuneImage from "../../images/check-fortune-button.png";
 
 const Fortune = ({setView, preload, zodiac: data, images, ...props}) => {
     const [preloader, setPreloader] = useState(true)
+    const [animal, setAnimal] = useState({})
+    const [selected, setSelected] = useState(false)
 
     useEffect(
         () => {
             const dateDropdown = document.getElementById('date-dropdown');
-            console.log(dateDropdown)
             if(!dateDropdown) return;
             const dropdownDefault = document.createElement('option');
             dropdownDefault.text = "In what year were you born?";
@@ -27,9 +31,32 @@ const Fortune = ({setView, preload, zodiac: data, images, ...props}) => {
         }, [preloader]
     )
 
+    useEffect(
+        () => {
+            animal.name?.length ? setSelected(true) : setSelected(false)
+        }, [animal]
+    )
+
     const handleChange = e => {
-        console.log("CHANGE", e.currentTarget.value)
+        const pick = data.filter(d => d.years.includes(Number(e.currentTarget.value)))
+        setAnimal(pick[0])
     }
+
+    const dateScreenStyle = useSpring({
+        // position: selected ? "relative" : "",
+        top: selected ? -200 : 0,
+        opacity: selected ? 0 : 1,
+        // zIndex: selected ? -1 : 1,
+        config: { mass: 1, tension: 600, friction: 50 },
+    });
+
+    const fortuneScreenStyle = useSpring({
+        // position: !selected ? "relative" : "",
+        top: !selected ? -200 : 0,
+        opacity: !selected ? 0 : 1,
+        // zIndex: !selected ? -1 : 1,
+        config: { mass: 1, tension: 600, friction: 50 },
+    });
 
     if(preloader) {
         return (
@@ -37,10 +64,16 @@ const Fortune = ({setView, preload, zodiac: data, images, ...props}) => {
         )
     }
 
+    console.log("IS SELECTED?", selected, animal.image, animal?.language?.jive?.forecast)
+
     return (
-        <section className="uk-section uk-section-large">
-            <div className="uk-container uk-container-xsmall uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
-                <div className="uk-width-1-1 uk-display-block uk-margin-large-bottom">
+        <div
+            style={{
+                // background: "black"
+            }}
+            className="uk-container uk-container-xsmall uk-padding-remove-vertical uk-margin-remove-vertical uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded"
+            data-uk-height-viewport="offset-top: false; offset-bottom: 56px">
+                <a.div style={dateScreenStyle} className="uk-width-1-1">
                     <img src={checkFortuneImage} />
                     <label style={{color: "#fff", paddingBottom: "4px"}} className="uk-form-label">
                         Select your birth year
@@ -52,13 +85,18 @@ const Fortune = ({setView, preload, zodiac: data, images, ...props}) => {
                         onChange={handleChange}
                         className="uk-select uk-border-rounded">
                     </select>
-                </div>
-                <hr />
-                <div className="uk-width-1-1 uk-display-block">
-                    <button onClick={() => setView("story")} className="uk-width-1-1 uk-button uk-button-large uk-button-danger uk-border-pill uk-text-bold uk-text-uppercase">Start again</button>
-                </div>
-            </div>
-        </section>
+                </a.div>
+                <a.div style={fortuneScreenStyle} className="uk-width-1-1">
+                    <div className="uk-container uk-container-expand">
+                        <div className="uk-card uk-card-small uk-card-default uk-border-rounded uk-box-shadow-medium">
+                            <div className="uk-card-body">
+                                <h1>{animal.name}</h1>
+                                <p>{animal?.language?.jive?.personality[0]}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a.div>
+        </div>
         );
     }
 

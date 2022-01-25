@@ -4,9 +4,6 @@ import {InstallPWA} from "./components/InstallPWA"
 import Walkthrough from "./components/Walkthrough"
 import HyperSwiper from "./components/HyperSwiper";
 import Fortune from "./components/Fortune";
-// import { useModal } from "./hooks/useModal";
-// import Modal from "./components/Modal";
-// import "./components/Modal/Modal.css"
 import './App.css';
 import "./styles/uikit.css";
 import {zodiac, elements} from './Data/index.js'
