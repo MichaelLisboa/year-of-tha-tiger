@@ -3,6 +3,7 @@ import useIsIOS from "./hooks/useIsIOS"
 import {InstallPWA} from "./components/InstallPWA"
 import Walkthrough from "./components/Walkthrough"
 import HyperSwiper from "./components/HyperSwiper";
+import Fortune from "./components/Fortune";
 // import { useModal } from "./hooks/useModal";
 // import Modal from "./components/Modal";
 // import "./components/Modal/Modal.css"
@@ -10,6 +11,7 @@ import './App.css';
 import "./styles/uikit.css";
 import {zodiac, elements} from './Data/index.js'
 import logo from "./images/tiger-icon.png"
+import checkFortuneImage from "./images/check-fortune-button.png"
 
 function importAll(r) {
         let images = {};
@@ -20,6 +22,7 @@ function importAll(r) {
 const App = () => {
     const { prompt } = useIsIOS();
     // const [modalOpen, setModalOpen, toggleModal] = useModal();
+    const [view, setView] = useState("story");
     const [preload, setPreload] = useState(true);
     const [mobile, setMobile] = useState(false);
     const [images, setImages] = useState([])
@@ -58,6 +61,7 @@ const App = () => {
             }
         }, []
     )
+    console.log("VIEW", view)
 
     return (
         <>
@@ -71,26 +75,41 @@ const App = () => {
                 zIndex: 100020,
                 backgroundColor: "rgb(163, 41, 37)"
             }}/>
-        <nav style={{zIndex: "100000"}} className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+        <nav style={{zIndex: "1000"}} className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
             <div style={{marginTop: "16px"}} className="uk-navbar-center">
                 <div className="uk-navbar-left uk-padding-remove-vertical uk-margin-remove-vertical">
                     <div className="uk-navbar-item">
+                    {view === "story" ?
                         <a
                             style={{height: "16px", fontSize: "12px", color: "#fff"}}
-                            className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold">Get yo' fortune</a>
+                            className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
+                            onClick={() => setView("fortune")}>Get yo' fortune</a>
+                        :
+                        <a
+                            style={{height: "16px", fontSize: "12px", color: "#fff"}}
+                            className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
+                            onClick={() => setView("story")}>Check tha story</a>
+                    }
                     </div>
                 </div>
                 <img src={logo} alt="Year of tha Tigah" width="48" />
                     <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
                         <div className="uk-navbar-item">
-                            <a style={{height: "16px", fontSize: "12px", color: "#fff"}} className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold">Check tha creds</a>
+                            <a
+                                style={{height: "16px", fontSize: "12px", color: "#fff"}}
+                                className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
+                                onClick={() => setView("creds")}>About dis app</a>
                         </div>
                     </div>
             </div>
         </nav>
         <main>
             <Walkthrough mobile={mobile} preload={preload} setPreload={setPreload} />
-            <HyperSwiper preload={preload} zodiac={zodiac} images={images} />
+            {view === "story" ?
+                <HyperSwiper setView={setView} preload={preload} zodiac={zodiac} images={images} />
+            :
+                <Fortune setView={setView} preload={preload} zodiac={zodiac} images={images} />
+            }
             {prompt && <InstallPWA />}
         </main>
         </>
