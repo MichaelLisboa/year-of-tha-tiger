@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+import Preloader from "../Preloader"
 import checkFortuneImage from "../../images/check-fortune-button.png"
 
 const Fortune = ({setView, preload, zodiac: data, images, ...props}) => {
+
+    const [preloader, setPreloader] = useState(true)
 
     useEffect(
         () => {
@@ -27,6 +30,12 @@ const Fortune = ({setView, preload, zodiac: data, images, ...props}) => {
 
     const handleChange = e => {
         console.log("CHANGE", e.currentTarget.value)
+    }
+
+    if(preloader) {
+        return (
+            <Preloader setPreloader={setPreloader} />
+        )
     }
 
     return (

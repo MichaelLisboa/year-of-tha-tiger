@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Preloader from "../Preloader"
 import Deck from "./Deck";
 
 async function fetchCards(data) {
@@ -10,6 +11,7 @@ async function fetchCards(data) {
 const HyperSwiper = ({preload, zodiac: data, images, ...props}) => {
     const [cards, setCards] = useState({})
     const [isEmpty, setIsEmpty] = useState(true);
+    const [preloader, setPreloader] = useState(true)
 
     useEffect(
         () => {
@@ -25,6 +27,12 @@ const HyperSwiper = ({preload, zodiac: data, images, ...props}) => {
             })
         }, [isEmpty, data]
     )
+
+    if(preloader) {
+        return (
+            <Preloader setPreloader={setPreloader} />
+        )
+    }
 
     return (
         !preload ?
