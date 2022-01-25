@@ -104,7 +104,7 @@ const App = () => {
             {view === "story" ?
                 <HyperSwiper setView={setView} preload={preload} zodiac={zodiac} images={images} />
             :
-                <Fortune setView={setView} preload={preload} zodiac={zodiac} images={images} />
+                <Fortune setView={setView} zodiac={zodiac} images={images} />
             }
             {prompt && <InstallPWA />}
         </main>
