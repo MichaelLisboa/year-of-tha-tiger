@@ -6,6 +6,7 @@ import Card from "./Card";
 import SwipeAlert from "./SwipeAlert";
 import SwipeNav from "./SwipeNav";
 import style from "./Deck.module.css";
+import checkFortuneImage from "../../images/check-fortune-button.png"
 
 const to = i => ({
     x: 0,
@@ -151,8 +152,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
                 )}
                 <div className="uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
                     <div className="uk-width-1-1 uk-display-block uk-margin-large-bottom">
-                        <p className="uk-text-lead uk-text-bold uk-light uk-margin-remove uk-padding-remove">Check yo' fortune</p>
-                        <h2 style={{fontWeight: "800", color: "#fff"}} className="uk-margin-remove-top uk-padding-remove-top">In tha Year of tha Tigah</h2>
+                        <img src={checkFortuneImage} />
                         <label style={{color: "#fff", paddingBottom: "4px"}} className="uk-form-label">
                             Select your birth year
                         </label>
