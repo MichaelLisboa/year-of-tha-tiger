@@ -69,18 +69,19 @@ const App = () => {
             }}/>
         <nav style={{zIndex: "100000"}} className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
 
-            <div className="uk-navbar-left uk-padding-remove-vertical uk-margin-remove-vertical">
-                <div className="uk-navbar-item">
-                    <a style={{height: "16px", fontSize: "12px", color: "#fff"}} className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase">Get yo' fortune</a>
-                </div>
-            </div>
+
             <div style={{marginTop: "16px"}} className="uk-navbar-center">
-                <img src={logo} alt="Year of tha Tigah" width="48" />
-            </div>
-            <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
-                <div className="uk-navbar-item">
-                    <a style={{height: "16px", fontSize: "12px", color: "#fff"}} className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase">Check tha creds</a>
+                <div className="uk-navbar-left uk-padding-remove-vertical uk-margin-remove-vertical">
+                    <div className="uk-navbar-item">
+                        <a style={{height: "16px", fontSize: "12px", color: "#fff"}} className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold">Get yo' fortune</a>
+                    </div>
                 </div>
+                <img src={logo} alt="Year of tha Tigah" width="48" />
+                    <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
+                        <div className="uk-navbar-item">
+                            <a style={{height: "16px", fontSize: "12px", color: "#fff"}} className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold">Check tha creds</a>
+                        </div>
+                    </div>
             </div>
         </nav>
         <main>
