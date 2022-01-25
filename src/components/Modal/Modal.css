@@ -21,7 +21,6 @@
 
 .modal-container h1::before {
   content: '';
-  background-image: url('../../images/astro-logo.png');
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

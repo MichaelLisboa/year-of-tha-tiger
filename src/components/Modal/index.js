@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import {useSpring, useChain, animated as a} from "react-spring";
-import usePortal from "../Hooks/usePortal";
+import usePortal from "../../hooks/usePortal";
 
 import "./Modal.css";
 
