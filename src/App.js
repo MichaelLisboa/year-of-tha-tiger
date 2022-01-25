@@ -61,7 +61,6 @@ const App = () => {
             }
         }, []
     )
-    console.log("VIEW", view)
 
     return (
         <>
