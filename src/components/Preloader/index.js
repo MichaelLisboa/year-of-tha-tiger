@@ -58,18 +58,16 @@ const Preloader = ({setPreloader, ...props}) => {
     )
 
     return (
-        <section className="uk-section uk-section-large">
-            <div className="uk-container uk-container-xsmall uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
-                <div className="uk-width-1-1 uk-display-block uk-margin-large-bottom">
-                    <a.div className={`${style.swipeAlert}`} style={trans}>
-                        <img
-                            src={pow}
-                            alt={"loading"}
-                            width="420" />
-                    </a.div>
-                </div>
+        <div className="uk-container uk-height-viewport uk-container-xsmall uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
+            <div className="uk-width-1-1 uk-display-block">
+                <a.div className={`${style.swipeAlert}`} style={trans}>
+                    <img
+                        src={pow}
+                        alt={"loading"}
+                        width="420" />
+                </a.div>
             </div>
-        </section>
+        </div>
         );
     }
 
