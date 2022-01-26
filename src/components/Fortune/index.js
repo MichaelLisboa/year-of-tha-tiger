@@ -7,8 +7,8 @@ import Preloader from "../Preloader";
 import style from "../HyperSwiper/Deck.module.css";
 import checkFortuneImage from "../../images/check-fortune-button.png";
 import reloadButton from "../../images/reload.png";
-import next from "../../images/icons/arrow-right.svg";
-import prev from "../../images/icons/arrow-left.svg";
+import next from "../../images/icons/arrow-right-white.svg";
+import prev from "../../images/icons/arrow-left-white.svg";
 
 const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;
 
@@ -195,23 +195,23 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <CarouselContainer height={height}>
                         {carouselFragment}
                         <div className={`${style.swipeNav} uk-width-5-6 uk-margin-top`}>
-                            <div
+                            <button
                                 type="prev"
                                 onClick={slideToPrevItem}
-                                style={{color: "#fff", cursor: "pointer"}}>
+                                style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
                                 <img className="uk-light uk-svg" src={prev} width="48" data-uk-svg />
-                            </div>
-                            <div
-                                style={{cursor: "pointer"}}
+                            </button>
+                            <button
+                                style={{borderStyle: "none", padding: "0"}}
                                 onClick={() => setSelected(false)}>
                                 <img src={reloadButton} width="80" />
-                            </div>
-                            <div
+                            </button>
+                            <button
                                 type="next"
                                 onClick={slideToNextItem}
-                                style={{cursor: "pointer"}}>
+                                style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
                                 <img src={next} width="48" data-uk-svg />
-                            </div>
+                            </button>
                         </div>
                     </CarouselContainer>
                     : null}

@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./Deck.module.css";
-import hate from "../../images/Hate.png";
-import love from "../../images/Love.png";
+import reloadButton from "../../images/reload.png";
+import next from "../../images/icons/arrow-right-white.svg";
+import prev from "../../images/icons/arrow-left-white.svg";
 
 export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isEmpty}) {
     return (
@@ -9,7 +10,7 @@ export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isE
         <div className={`${style.swipeNav}`}>
                 <div>
                     <button
-                        style={{borderStyle: "none"}}
+                        style={{borderStyle: "none", opacity: "0.7"}}
                         onClick={(e) => {
                           e.stopPropagation()
                           if (cardIndex >= 0) {
@@ -17,15 +18,12 @@ export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isE
                           }
                         }}
                         >
-                        <img
-                            src={hate}
-                            alt="Pass"
-                            width="36" />
+                        <img src={prev} width="48" data-uk-svg />
                     </button>
                 </div>
                 <div>
                     <button
-                        style={{borderStyle: "none"}}
+                        style={{borderStyle: "none", opacity: "0.7"}}
                         onClick={(e) => {
                           e.stopPropagation()
                           if (cardIndex >= 0) {
@@ -33,10 +31,7 @@ export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isE
                           }
                         }}
                     >
-                        <img
-                            src={love}
-                            alt="Like"
-                            width="36" />
+                        <img src={next} width="48" data-uk-svg />
                     </button>
                 </div>
         </div>
