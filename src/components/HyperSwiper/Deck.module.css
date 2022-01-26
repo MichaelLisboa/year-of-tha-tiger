@@ -168,7 +168,7 @@
   touch-action: pan-x;
 }
 
-.fortuneCard::after {
+.fortuneCard::before {
   content: "";
   position: absolute;
   border-radius: 10px;

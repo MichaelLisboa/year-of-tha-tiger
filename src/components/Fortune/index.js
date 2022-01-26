@@ -7,6 +7,8 @@ import Preloader from "../Preloader";
 import style from "../HyperSwiper/Deck.module.css";
 import checkFortuneImage from "../../images/check-fortune-button.png";
 import reloadButton from "../../images/reload.png";
+import next from "../../images/icons/arrow-right.svg";
+import prev from "../../images/icons/arrow-left.svg";
 
 const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;
 
@@ -193,14 +195,23 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <CarouselContainer height={height}>
                         {carouselFragment}
                         <div className={`${style.swipeNav} uk-width-5-6 uk-margin-top`}>
-                            <div style={{background: "black", height: "36px", width: "36px", cursor: "pointer"}} type="prev" className="uk-width-auto uk-light" onClick={slideToPrevItem} data-uk-icon="icon: arrow-left: ratio: 3" />
+                            <div
+                                type="prev"
+                                onClick={slideToPrevItem}
+                                style={{color: "#fff", cursor: "pointer"}}>
+                                <img className="uk-light uk-svg" src={prev} width="48" data-uk-svg />
+                            </div>
                             <div
                                 style={{cursor: "pointer"}}
                                 onClick={() => setSelected(false)}>
                                 <img src={reloadButton} width="80" />
                             </div>
-
-                            <div style={{background: "black", height: "36px", width: "36px", cursor: "pointer"}} type="next" className="uk-width-auto uk-light" onClick={slideToNextItem} data-uk-icon="icon: arrow-right: ratio: 3" />
+                            <div
+                                type="next"
+                                onClick={slideToNextItem}
+                                style={{cursor: "pointer"}}>
+                                <img src={next} width="48" data-uk-svg />
+                            </div>
                         </div>
                     </CarouselContainer>
                     : null}
