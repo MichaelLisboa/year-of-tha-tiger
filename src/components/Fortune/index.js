@@ -144,6 +144,9 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         () => {
             dateDropdown = document.getElementById('date-dropdown');
             if(!dateDropdown) return;
+            while (dateDropdown.firstChild) {
+                dateDropdown.removeChild(dateDropdown.firstChild);
+            }
             const dropdownDefault = document.createElement('option');
             dropdownDefault.text = "In what year were you born?";
             dropdownDefault.value = "";

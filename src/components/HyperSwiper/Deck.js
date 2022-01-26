@@ -138,7 +138,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images, setView}) => {
                     <div className="uk-width-1-1 uk-display-block">
                         <button
                             style={{color: "#fff", fontSize: "0.85rem"}}
-                            onClick={() => setIsEmpty(true)} className="uk-width-1-1 uk-button uk-button-small uk-button-text uk-text-uppercase">
+                            onClick={() => setIsEmpty(true)} className="uk-button uk-button-small uk-button-text uk-text-uppercase">
                             start the story again</button>
                     </div>
                 </div>
