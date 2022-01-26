@@ -32,8 +32,9 @@ const CarouselItem = ({height, children}) => {
         className="uk-margin-right uk-margin-left">
             <div
                 style={{
-                    height: "98%",
+                    height: "98.4%",
                     width: "auto",
+                    zIndex: "-1",
                     transform: `rotateY(${(Math.random() * 9)/10} + 'deg')`,
                 }}
                 className={`${style.card}`}>
@@ -188,6 +189,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                 <div
                     style={{height: height}}
                     className={`${style.fortuneContainer}`}>
+                    {selected ?
                     <CarouselContainer height={height}>
                         {carouselFragment}
                         <div className={`${style.swipeNav} uk-width-5-6 uk-margin-top`}>
@@ -201,6 +203,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                             <div style={{background: "black", height: "36px", width: "36px", cursor: "pointer"}} type="next" className="uk-width-auto uk-light" onClick={slideToNextItem} data-uk-icon="icon: arrow-right: ratio: 3" />
                         </div>
                     </CarouselContainer>
+                    : null}
                 </div>
             </a.div>
         </>
