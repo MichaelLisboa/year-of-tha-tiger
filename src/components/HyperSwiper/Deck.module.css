@@ -7,6 +7,21 @@
   overscroll-behavior-y: contain;
 }
 
+.fortuneContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  overscroll-behavior-y: contain;
+}
+
+.fortuneContainer::after,
+.fortuneContainer::before {
+  content: "";
+  display: table;
+}
+
 .deckContainer::after,
 .deckContainer::before {
   content: "";

@@ -7,6 +7,8 @@ import Preloader from "../Preloader";
 import style from "../HyperSwiper/Deck.module.css";
 import checkFortuneImage from "../../images/check-fortune-button.png";
 
+const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;
+
 const CarouselContainer = ({height, children}) => {
     return (
         <div
@@ -20,16 +22,18 @@ const CarouselContainer = ({height, children}) => {
 const CarouselItem = ({height, children}) => {
     return (
         <div style={{
+            width: "100%",
             border: "#fff 4px solid",
             borderRadius: "20px",
-            width: "100%",
-            height: "auto"
+            transform: `rotateY(${(Math.random() * 9)/10} + 'deg')`,
+            touchAction: "pan-x"
         }}
-        className="uk-margin-small-right uk-margin-small-left">
+        className="uk-margin-right uk-margin-left">
             <div
                 style={{
                     height: "98%",
-                    width: "auto"
+                    width: "auto",
+                    transform: `rotateY(${(Math.random() * 9)/10} + 'deg')`,
                 }}
                 className={`${style.card}`}>
                 <div style={{height: "100%"}}>
@@ -159,10 +163,11 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
     }
 
     return (
-        <div
-            style={{height: height-24}}
-            className={`${style.deckContainer}`}>
-                <a.div style={dateScreenStyle}>
+        <>
+            <a.div style={dateScreenStyle}>
+                <div
+                    style={{height: height}}
+                    className={`${style.deckContainer}`}>
                     <div className="uk-container uk-container-xsmall">
                         <img src={checkFortuneImage} />
                         <select
@@ -173,19 +178,20 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                             className="uk-select uk-border-rounded uk-margin-remove-vertical">
                         </select>
                     </div>
-                </a.div>
+                </div>
+            </a.div>
 
-                <a.div
-                    style={fortuneScreenStyle}>
-                    <div
-                        style={{height: height-24}}
-                        className={`${style.deckContainer}`}>
-                        <CarouselContainer height={height}>
-                            {carouselFragment}
-                        </CarouselContainer>
-                    </div>
-                </a.div>
-        </div>
+            <a.div
+                style={fortuneScreenStyle}>
+                <div
+                    style={{height: height-24}}
+                    className={`${style.fortuneContainer}`}>
+                    <CarouselContainer height={height}>
+                        {carouselFragment}
+                    </CarouselContainer>
+                </div>
+            </a.div>
+        </>
         );
     }
 
