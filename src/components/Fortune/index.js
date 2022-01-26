@@ -101,31 +101,32 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         id: "CarouselItem-2",
         renderItem: (
           <CarouselItem>
-            <div className={`uk-padding`}>
+            <div style={{height: "100%"}} className={`uk-padding`}>
                 <h2>{animal.name}'s Compatibility</h2>
-                {animal?.friends?.length >= 1 ?
-                <div className="uk-grid uk-grid-small" data-uk-grid>
-                    <p className="uk-text-bold uk-width-1-1 uk-margin-remove-bottom">{animal.name} gets groovy wit'</p>
-                    {animal.friends.map((f, i) =>
-                        <div key={`friend-${i}`} className={`uk-text-center uk-width-1-${animal.friends.length}`}>
-                            <img src={f.image} data-uk-img />
-                            <small className="uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
-                        </div>
-                    )}
-                </div>
-                : null}
-                {animal?.enemies?.length >= 1 ?
+                <div className="uk-margin">
+                    {animal?.friends?.length >= 1 ?
                     <div className="uk-grid uk-grid-small" data-uk-grid>
-                        <p className="uk-text-bold uk-width-1-1 uk-margin-remove-bottom">{animal.name} ain't down wit'</p>
-                        {animal.enemies.map((f, i) =>
-                            <div key={`enemy-${i}`} className={`uk-text-center uk-width-1-${animal.enemies.length}`}>
+                        <p className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</p>
+                        {animal.friends.map((f, i) =>
+                            <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
                                 <img src={f.image} data-uk-img />
-                                <small className="uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                                <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
                     </div>
-                    :
-                    null}
+                    : null}
+                    {animal?.enemies?.length >= 1 ?
+                    <div className="uk-grid uk-grid-small uk-margin-medium-top" data-uk-grid>
+                        <p className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</p>
+                        {animal.enemies.map((f, i) =>
+                            <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
+                                <img src={f.image} data-uk-img />
+                                <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                            </div>
+                        )}
+                    </div>
+                    : null}
+                </div>
             </div>
           </CarouselItem>
         )
