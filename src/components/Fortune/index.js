@@ -6,6 +6,7 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Preloader from "../Preloader";
 import style from "../HyperSwiper/Deck.module.css";
 import checkFortuneImage from "../../images/check-fortune-button.png";
+import reloadButton from "../../images/reload.png";
 
 const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;
 
@@ -79,7 +80,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <h2 onClick={() => setSelected(false)}>{animal.name}'s Personality</h2>
+                <h2>{animal.name}'s Personality</h2>
                 <p>{animal?.language?.jive?.personality[0]}</p>
             </div>
           </CarouselItem>
@@ -90,7 +91,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <h2 onClick={() => setSelected(false)}>{animal.name}'s Fortune</h2>
+                <h2>{animal.name}'s Fortune</h2>
                 <p>{animal?.language?.jive?.forecast[0]}</p>
             </div>
           </CarouselItem>
@@ -101,7 +102,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <h2 onClick={() => setSelected(false)}>{animal.name}'s Compatibility</h2>
+                <h2>{animal.name}'s Compatibility</h2>
                 <p>{animal?.language?.jive?.story[0]}</p>
             </div>
           </CarouselItem>
@@ -188,6 +189,18 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     className={`${style.fortuneContainer}`}>
                     <CarouselContainer height={height}>
                         {carouselFragment}
+                        <div className="uk-flex uk-flex-center">
+                            <div
+                                style={{
+                                    backgroundColor: "rgb(163, 41, 37)",
+                                    padding: "4px 24px 4px 24px",
+                                    cursor: "pointer"
+                                }}
+                                className="uk-text-center uk-width-1-4 uk-margin-top uk-border-pill uk-box-shadow-hover-large"
+                                onClick={() => setSelected(false)}>
+                                <img src={reloadButton} data-uk-img />
+                            </div>
+                        </div>
                     </CarouselContainer>
                 </div>
             </a.div>

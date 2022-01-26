@@ -31,6 +31,7 @@
 .deck {
   position: relative;
   display: flex;
+  flex-direction: column;
   align-self: center;
   width: 100%;
   touch-action: pan-x;
