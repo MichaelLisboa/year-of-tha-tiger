@@ -86,7 +86,27 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <h2>{animal.name}'s Personality</h2>
+                <h2>{animal?.name}'s Personality</h2>
+                <div className="uk-margin-bottom">
+                    <h5 className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</h5>
+                    <p className="uk-margin-remove-vertical uk-padding-remove">
+                    {animal?.positive?.map((p, i) =>
+                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove" key={`${animal.name}-pos-${i}`}>
+                            {p}
+                        </small>
+                    )}
+                    </p>
+                </div>
+                <div>
+                    <h5 className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</h5>
+                    <p className="uk-margin-remove-vertical uk-padding-remove">
+                    {animal?.negative?.map((p, i) =>
+                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove" key={`${animal.name}-pos-${i}`}>
+                            {p}
+                        </small>
+                    )}
+                    </p>
+                </div>
                 <p>{animal?.language?.jive?.personality[0]}</p>
             </div>
           </CarouselItem>
@@ -206,6 +226,8 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
             negative: pick[0].negative_traits,
             positive: pick[0].positive_traits
         }
+
+        console.log("DATA", animalData)
 
         setAnimal(animalData)
     }
