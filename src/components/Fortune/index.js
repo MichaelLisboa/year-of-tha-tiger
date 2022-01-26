@@ -185,7 +185,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
             <a.div
                 style={fortuneScreenStyle}>
                 <div
-                    style={{height: height-24}}
+                    style={{height: height}}
                     className={`${style.fortuneContainer}`}>
                     <CarouselContainer height={height}>
                         {carouselFragment}
