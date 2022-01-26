@@ -21,6 +21,61 @@
   touch-action: pan-x;
 }
 
+.sliderContainer::after,
+.sliderContainer::before {
+  content: "";
+  display: table;
+}
+
+.sliderContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: space-around;
+  justify-content: space-around;
+  align-self: center;
+  height: 92vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+
+.sliderCardContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-height: 85vh;
+  width: 100%;
+  max-width: 500px;
+  min-height: 380px;
+  touch-action: pan-x;
+}
+
+.fortuneCard {
+  position: relative;
+  max-height: 80vh;
+  background-color: #fff;
+  border: #F98D45 6px solid;
+  border-radius: 16px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  box-shadow: 0 2px 8px 20px rgba(50, 50, 73, 0.03);
+  overflow: hidden;
+}
+
+.fortuneCard::after {
+  content: "";
+  position: absolute;
+  border-radius: 8px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 6px solid #FABC48;
+}
+
 @media (min-width: 768px) {
   .deck {
     max-width: 460px;
