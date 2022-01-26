@@ -98,7 +98,7 @@ const App = () => {
                         style={{height: "16px", fontSize: "12px", color: "#fff"}}
                         className="uk-padding-remove uk-margin-remove"
                         onClick={() => setView("about")}>
-                        <img src={info} alt="About this app" width="24" />
+                        <img src={info} alt="About this app" width="16" />
                     </a>
                 </div>
             </div>
