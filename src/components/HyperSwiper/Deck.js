@@ -92,30 +92,6 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
     active.add(card);
     active.add(card-1);
 
-    useEffect(
-        () => {
-            const dateDropdown = document.getElementById('date-dropdown');
-            const dropdownDefault = document.createElement('option');
-            dropdownDefault.text = "In what year were you born?";
-            dropdownDefault.value = "";
-            dateDropdown.add(dropdownDefault);
-
-            let currentYear = new Date().getFullYear();
-            let earliestYear = 1920;
-            while (currentYear >= earliestYear) {
-                const dateOption = document.createElement('option');
-                dateOption.text = currentYear;
-                dateOption.value = currentYear;
-                dateDropdown.add(dateOption);
-                currentYear -= 1;
-              }
-        }, []
-    )
-
-    const handleChange = e => {
-        console.log("CHANGE", e.currentTarget.value)
-    }
-
     if(cards.length === 0) {
         return <div />
     }
@@ -153,16 +129,6 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
                 <div className="uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
                     <div className="uk-width-1-1 uk-display-block uk-margin-large-bottom">
                         <img src={checkFortuneImage} />
-                        <label style={{color: "#fff", paddingBottom: "4px"}} className="uk-form-label">
-                            Select your birth year
-                        </label>
-                        <select
-                            style={{fontSize: "1.2rem", height: "56px"}}
-                            id="date-dropdown"
-                            defaultValue="Choose your birth year"
-                            onChange={handleChange}
-                            className="uk-select uk-border-rounded">
-                        </select>
                     </div>
                     <hr />
                     <div className="uk-width-1-1 uk-display-block">
