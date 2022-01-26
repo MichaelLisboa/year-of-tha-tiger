@@ -55,10 +55,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
 
     const {
     carouselFragment,
-    thumbsFragment,
     slideToPrevItem,
     slideToNextItem,
   } = useSpringCarousel({
+    withLoop: true,
     items: [
       {
         id: "CarouselItem-1",
@@ -189,17 +189,15 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     className={`${style.fortuneContainer}`}>
                     <CarouselContainer height={height}>
                         {carouselFragment}
-                        <div className="uk-flex uk-flex-center">
+                        <div className={`${style.swipeNav} uk-width-5-6 uk-margin-top`}>
+                            <div style={{background: "black", height: "36px", width: "36px", cursor: "pointer"}} type="prev" className="uk-width-auto uk-light" onClick={slideToPrevItem} data-uk-icon="icon: arrow-left: ratio: 3" />
                             <div
-                                style={{
-                                    backgroundColor: "rgb(163, 41, 37)",
-                                    padding: "4px 24px 4px 24px",
-                                    cursor: "pointer"
-                                }}
-                                className="uk-text-center uk-width-1-4 uk-margin-top uk-border-pill uk-box-shadow-hover-large"
+                                style={{cursor: "pointer"}}
                                 onClick={() => setSelected(false)}>
-                                <img src={reloadButton} data-uk-img />
+                                <img src={reloadButton} width="80" />
                             </div>
+
+                            <div style={{background: "black", height: "36px", width: "36px", cursor: "pointer"}} type="next" className="uk-width-auto uk-light" onClick={slideToNextItem} data-uk-icon="icon: arrow-right: ratio: 3" />
                         </div>
                     </CarouselContainer>
                 </div>
