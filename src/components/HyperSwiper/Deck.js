@@ -98,10 +98,10 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
 
     return (
         <div
-            style={{height: height-24}}
+            style={{height: height}}
             className={`${style.deckContainer}`}>
             <div
-                style={{height: height*0.7}}
+                style={{height: height*0.7, marginTop: "24px"}}
                 className={`${style.deck}`}>
                 <SwipeAlert
                     isSwiped={isSwiped}

@@ -72,7 +72,7 @@ const App = () => {
                 zIndex: 100020,
                 backgroundColor: "rgb(163, 41, 37)"
             }}/>
-        <nav style={{zIndex: "1000"}} className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+        <nav style={{zIndex: "1000"}} className="uk-position-top-center uk-navbar-container uk-navbar-transparent" data-uk-navbar>
             <div style={{marginTop: "16px"}} className="uk-navbar-center">
                 <div className="uk-navbar-left uk-padding-remove-vertical uk-margin-remove-vertical">
                     <div className="uk-navbar-item">
