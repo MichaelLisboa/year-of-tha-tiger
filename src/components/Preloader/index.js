@@ -63,7 +63,7 @@ const Preloader = ({setPreloader, ...props}) => {
                 <div className="uk-width-1-1 uk-display-block uk-margin-large-bottom">
                     <a.div className={`${style.swipeAlert}`} style={trans}>
                         <img
-                            src={sfx()}
+                            src={pow}
                             alt={"loading"}
                             width="420" />
                     </a.div>
