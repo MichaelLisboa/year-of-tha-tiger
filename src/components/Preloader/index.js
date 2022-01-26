@@ -1,20 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
 import style from "../HyperSwiper/Deck.module.css";
-import oof from "../../images/oof.png";
-import pow from "../../images/pow.png";
-import ouch from "../../images/ouch.png";
-import smash from "../../images/smash.png";
-import bzzt from "../../images/bzzt.png";
-import blam from "../../images/blam.png";
+import loading from "../../images/loading.png";
 import checkFortuneImage from "../../images/check-fortune-button.png"
 
-const effects = [pow, smash, blam, oof, ouch, bzzt]
-
-const sfx = () => {
-    const l = effects.map((a) => [Math.random(),a]).sort((a,b) => a[0]-b[0]).map((a) => a[1]);
-    return l.slice(-1)[0]
-}
 
 const Preloader = ({setPreloader, ...props}) => {
 
@@ -58,15 +47,14 @@ const Preloader = ({setPreloader, ...props}) => {
     )
 
     return (
-        <div className="uk-container uk-height-viewport uk-container-xsmall uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
-            <div className="uk-width-1-1 uk-display-block">
-                <a.div className={`${style.swipeAlert}`} style={trans}>
+        <div className="uk-height-viewport uk-flex uk-flex-middle uk-flex-center">
+                <a.div className={`${style.swipeAlert} uk-text-center`} style={trans}>
                     <img
-                        src={pow}
+                        src={loading}
                         alt={"loading"}
-                        width="420" />
+                        width="360"
+                        data-uk-img />
                 </a.div>
-            </div>
         </div>
         );
     }
