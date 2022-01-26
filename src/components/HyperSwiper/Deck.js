@@ -131,7 +131,7 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images, setView}) => {
                         className="uk-width-1-1 uk-display-block uk-box-shadow-medium uk-box-shadow-hover-large"
                         onClick={() => setView("fortune")}>
                         <img
-                            style={{border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer"}}
+                            style={{backgroundColor: "rgb(163, 41, 37)", border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer"}}
                             src={checkFortuneImage} />
                     </div>
                     <div className="uk-width-1-1 uk-light uk-text-center uk-text-small uk-margin-large-top uk-margin-medium-bottom">or</div>
