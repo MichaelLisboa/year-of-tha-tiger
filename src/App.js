@@ -9,6 +9,7 @@ import "./styles/uikit.css";
 import {zodiac, elements} from './Data/index.js'
 import logo from "./images/tiger-icon.png"
 import checkFortuneImage from "./images/check-fortune-button.png"
+import info from "./images/icons/info-white.svg";
 
 function importAll(r) {
         let images = {};
@@ -95,8 +96,10 @@ const App = () => {
                 <div className="uk-navbar-item">
                     <a
                         style={{height: "16px", fontSize: "12px", color: "#fff"}}
-                        className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
-                        onClick={() => setView("about")}>info</a>
+                        className="uk-padding-remove uk-margin-remove"
+                        onClick={() => setView("about")}>
+                        <img src={info} alt="About this app" width="24" />
+                    </a>
                 </div>
             </div>
         </nav>
