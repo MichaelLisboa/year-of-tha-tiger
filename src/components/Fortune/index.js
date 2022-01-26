@@ -81,37 +81,58 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                         className="uk-select uk-border-rounded uk-margin-remove-vertical">
                     </select>
                 </a.div>
-                <a.div style={fortuneScreenStyle} className="uk-width-1-1">
-                    <div className="uk-position-relative uk-visible-toggle" data-uk-slider>
-                        <div className="uk-slider-items uk-grid uk-grid-match" data-uk-grid>
-                            <div className="uk-width-3-4">
-                                <div className="uk-card uk-card-small uk-card-default uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
-                                    <div className="">
+                <a.div style={fortuneScreenStyle}>
+                    <div className="uk-position-relative uk-visible-toggle" data-uk-slider="center: true">
+                        <div className="uk-slider-items uk-grid uk-grid-match">
+                            <div className={`uk-width-3-4`}>
+                                <div style={{
+                                    border: "#fff 4px solid",
+                                    borderRadius: "20px",
+                                    touchAction: "pan-x"}}>
+                                    <div style={{height: "100%"}} className={`${style.card}`}>
                                         <img src={image.current} data-uk-img />
                                     </div>
                                 </div>
                             </div>
-                            <div className="uk-width-3-4">
-                                <div className="uk-card uk-card-small uk-card-default uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
-                                    <div className="uk-card-body">
-                                        <h1 onClick={() => setSelected(false)}>{animal.name}</h1>
-                                        <p>{animal?.language?.jive?.personality[0]}</p>
+
+                            <div className={`uk-width-3-4`}>
+                                <div style={{
+                                    border: "#fff 4px solid",
+                                    borderRadius: "20px",
+                                    touchAction: "pan-x"}}>
+                                    <div style={{height: "100%"}} className={`${style.card}`}>
+                                        <div className="uk-padding">
+                                            <h2 onClick={() => setSelected(false)}>{animal.name}'s Personality</h2>
+                                            <p>{animal?.language?.jive?.personality[0]}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="uk-width-3-4">
-                                <div className="uk-card uk-card-small uk-card-default uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
-                                    <div className="uk-card-body">
-                                        <h1 onClick={() => setSelected(false)}>{animal.name}</h1>
-                                        <p>{animal?.language?.jive?.forecast[0]}</p>
+
+                            <div className={`uk-width-3-4`}>
+                                <div style={{
+                                    border: "#fff 4px solid",
+                                    borderRadius: "20px",
+                                    touchAction: "pan-x"}}>
+                                    <div style={{height: "100%"}} className={`${style.card}`}>
+                                        <div className="uk-padding">
+                                            <h2 onClick={() => setSelected(false)}>{animal.name}'s Fortune</h2>
+                                            <p>{animal?.language?.jive?.forecast[0]}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="uk-width-3-4">
-                                <div className="uk-card uk-card-small uk-card-default uk-border-rounded uk-box-shadow-medium">
-                                    <div className="uk-card-body">
-                                        <h1 onClick={() => setSelected(false)}>{animal.name}</h1>
-                                        <p>{animal?.language?.jive?.story[0]}</p>
+
+                            <div className={`uk-width-3-4`}>
+                                <div style={{
+                                    border: "#fff 4px solid",
+                                    borderRadius: "20px",
+                                    touchAction: "pan-x"}}>
+                                    <div style={{height: "100%"}} className={`${style.card}`}>
+                                        <div className="uk-padding">
+                                            <h2 onClick={() => setSelected(false)}>{animal.name}'s Compatibility</h2>
+                                            <p>{animal?.language?.jive?.story[0]}</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
