@@ -7,6 +7,7 @@ import Preloader from "../Preloader";
 import style from "../HyperSwiper/Deck.module.css";
 import checkFortuneImage from "../../images/check-fortune-button.png";
 import reloadButton from "../../images/reload.png";
+import background from "../../images/paper-bg.png";
 import next from "../../images/icons/arrow-right-white.svg";
 import prev from "../../images/icons/arrow-left-white.svg";
 
@@ -34,6 +35,7 @@ const CarouselItem = ({height, children}) => {
                     height: "98.4%",
                     width: "auto",
                     zIndex: "-1",
+                    backgroundImage: `url(${background})`,
                 }}
                 className={`${style.fortuneCard}`}>
                 <div style={{height: "100%"}}>
