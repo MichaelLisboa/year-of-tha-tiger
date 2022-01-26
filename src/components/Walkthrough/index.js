@@ -5,13 +5,13 @@ import style from "./Walkthrough.module.css";
 const Walkthrough = ({preload, setPreload, mobile}) => {
     const coverScreenStyle = useSpring({
         position: "fixed",
-        top: preload ? "0%" : "100%",
+        // top: preload ? "0%" : "100%",
         left: 0,
         right: 0,
         height: "100%",
         width: "100%",
         opacity: preload ? 1 : 0,
-        zIndex: "1005",
+        zIndex: preload ? "1005" : "-1",
         config: { mass: 1, tension: 600, friction: 50 },
     });
 

@@ -57,6 +57,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
     slideToPrevItem,
     slideToNextItem,
   } = useSpringCarousel({
+     springConfig: {
+      tension: 500,
+      mass: 2,
+    },
     initialActiveItem: 0,
     withLoop: true,
     items: [
