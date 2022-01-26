@@ -43,28 +43,6 @@
   display: table;
 }
 
-.fortuneCard {
-  background-color: #fff;
-  border: #F98D45 12px solid;
-  border-radius: 16px;
-  -moz-border-radius: 16px;
-  -webkit-border-radius: 16px;
-  box-shadow: 0 2px 8px 20px rgba(50, 50, 73, 0.03);
-  overflow: hidden;
-}
-
-.fortuneCard::after {
-  content: "";
-  position: absolute;
-  border-radius: 18px;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 16px solid #FABC48;
-}
-
 @media (min-width: 768px) {
   .deck {
     max-width: 460px;
@@ -166,6 +144,34 @@
   content: "";
   position: absolute;
   border-radius: 8px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 6px solid #FABC48;
+}
+
+.fortuneCard {
+  position: relative;
+  background-color: #fff;
+  width: 98%;
+  border: #F98D45 6px solid;
+  border-radius: 18px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: pan-x;
+}
+
+.fortuneCard::after {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
   z-index: 1;
   top: 0;
   left: 0;

@@ -75,28 +75,29 @@ const App = () => {
             <div style={{marginTop: "16px"}} className="uk-navbar-center">
                 <div className="uk-navbar-left uk-padding-remove-vertical uk-margin-remove-vertical">
                     <div className="uk-navbar-item">
-                    {view === "story" ?
-                        <a
-                            style={{height: "16px", fontSize: "12px", color: "#fff"}}
-                            className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
-                            onClick={() => setView("fortune")}>Get yo' fortune</a>
-                        :
                         <a
                             style={{height: "16px", fontSize: "12px", color: "#fff"}}
                             className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
                             onClick={() => setView("story")}>Check tha story</a>
-                    }
                     </div>
                 </div>
                 <img src={logo} alt="Year of tha Tigah" width="48" />
-                    <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
-                        <div className="uk-navbar-item">
-                            <a
-                                style={{height: "16px", fontSize: "12px", color: "#fff"}}
-                                className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
-                                onClick={() => setView("creds")}>About dis app</a>
-                        </div>
+                <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
+                    <div className="uk-navbar-item">
+                        <a
+                            style={{height: "16px", fontSize: "12px", color: "#fff"}}
+                            className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
+                            onClick={() => setView("fortune")}>Get yo' fortune</a>
                     </div>
+                </div>
+            </div>
+            <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
+                <div className="uk-navbar-item">
+                    <a
+                        style={{height: "16px", fontSize: "12px", color: "#fff"}}
+                        className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
+                        onClick={() => setView("about")}>info</a>
+                </div>
             </div>
         </nav>
         <main>

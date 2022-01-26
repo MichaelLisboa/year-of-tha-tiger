@@ -37,7 +37,7 @@ const CarouselItem = ({height, children}) => {
                     zIndex: "-1",
                     transform: `rotateY(${(Math.random() * 9)/10} + 'deg')`,
                 }}
-                className={`${style.card}`}>
+                className={`${style.fortuneCard}`}>
                 <div style={{height: "100%"}}>
                     {children}
                 </div>
