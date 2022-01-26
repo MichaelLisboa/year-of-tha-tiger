@@ -28,7 +28,7 @@ const from = i => ({
     y: -2000
 });
 
-const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
+const Deck = ({preload, cards, isEmpty, setIsEmpty, images, setView}) => {
     const { height } = useWindowDimensions();
     const [isSwiped, setIsSwiped] = useState({dir: 0, value: ""});
     const [card, setCard] = useState(cards.length-1);
@@ -126,9 +126,13 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images}) => {
                          />
                     </a.div>
                 )}
-                <div className="uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center uk-border-rounded">
-                    <div className="uk-width-1-1 uk-display-block uk-margin-large-bottom">
-                        <img src={checkFortuneImage} />
+                <div className="uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+                    <div
+                        className="uk-width-1-1 uk-display-block uk-margin-large-bottom uk-box-shadow-medium uk-box-shadow-hover-large"
+                        onClick={() => setView("fortune")}>
+                        <img
+                            style={{border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer"}}
+                            src={checkFortuneImage} />
                     </div>
                     <hr />
                     <div className="uk-width-1-1 uk-display-block">

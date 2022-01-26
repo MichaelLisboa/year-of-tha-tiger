@@ -48,13 +48,13 @@ const Preloader = ({setPreloader, ...props}) => {
 
     return (
         <div className="uk-height-viewport uk-flex uk-flex-middle uk-flex-center">
-                <a.div className={`${style.swipeAlert} uk-text-center`} style={trans}>
-                    <img
-                        src={loading}
-                        alt={"loading"}
-                        width="360"
-                        data-uk-img />
-                </a.div>
+            <a.div className={`${style.swipeAlert} uk-text-center`} style={trans}>
+                <img
+                    src={loading}
+                    alt={"loading"}
+                    width="360"
+                    data-uk-img />
+            </a.div>
         </div>
         );
     }

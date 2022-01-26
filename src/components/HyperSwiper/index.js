@@ -8,7 +8,7 @@ async function fetchCards(data) {
     return res
 }
 
-const HyperSwiper = ({preload, zodiac: data, images, ...props}) => {
+const HyperSwiper = ({preload, setView, zodiac: data, images, ...props}) => {
     const [cards, setCards] = useState({})
     const [isEmpty, setIsEmpty] = useState(true);
     const [preloader, setPreloader] = useState(true)
@@ -37,7 +37,7 @@ const HyperSwiper = ({preload, zodiac: data, images, ...props}) => {
     return (
         !preload ?
         cards.length ?
-            <Deck preload={preload} cards={cards} isEmpty={isEmpty} setIsEmpty={setIsEmpty} images={images} />
+            <Deck preload={preload} cards={cards} isEmpty={isEmpty} setIsEmpty={setIsEmpty} images={images} setView={setView} />
             :
             <div style={{height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <small style={{color: "#fff"}}>loading</small>
