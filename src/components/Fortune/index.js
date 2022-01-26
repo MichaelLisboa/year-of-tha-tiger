@@ -10,8 +10,6 @@ import reloadButton from "../../images/reload.png";
 import next from "../../images/icons/arrow-right-white.svg";
 import prev from "../../images/icons/arrow-left-white.svg";
 
-const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;
-
 const CarouselContainer = ({height, children}) => {
     return (
         <div
@@ -28,7 +26,6 @@ const CarouselItem = ({height, children}) => {
             width: "100%",
             border: "#fff 4px solid",
             borderRadius: "20px",
-            transform: `rotateY(${(Math.random() * 9)/10} + 'deg')`,
             touchAction: "pan-x"
         }}
         className="uk-margin-right uk-margin-left">
@@ -37,7 +34,6 @@ const CarouselItem = ({height, children}) => {
                     height: "98.4%",
                     width: "auto",
                     zIndex: "-1",
-                    transform: `rotateY(${(Math.random() * 9)/10} + 'deg')`,
                 }}
                 className={`${style.fortuneCard}`}>
                 <div style={{height: "100%"}}>
@@ -107,7 +103,29 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
           <CarouselItem>
             <div className={`uk-padding`}>
                 <h2>{animal.name}'s Compatibility</h2>
-                <p>{animal?.language?.jive?.story[0]}</p>
+                {animal?.friends?.length >= 1 ?
+                <div className="uk-grid uk-grid-small" data-uk-grid>
+                    <p className="uk-text-bold uk-width-1-1 uk-margin-remove-bottom">{animal.name} gets groovy wit'</p>
+                    {animal.friends.map((f, i) =>
+                        <div key={`friend-${i}`} className={`uk-text-center uk-width-1-${animal.friends.length}`}>
+                            <img src={f.image} data-uk-img />
+                            <small className="uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                        </div>
+                    )}
+                </div>
+                : null}
+                {animal?.enemies?.length >= 1 ?
+                    <div className="uk-grid uk-grid-small" data-uk-grid>
+                        <p className="uk-text-bold uk-width-1-1 uk-margin-remove-bottom">{animal.name} ain't down wit'</p>
+                        {animal.enemies.map((f, i) =>
+                            <div key={`enemy-${i}`} className={`uk-text-center uk-width-1-${animal.enemies.length}`}>
+                                <img src={f.image} data-uk-img />
+                                <small className="uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                            </div>
+                        )}
+                    </div>
+                    :
+                    null}
             </div>
           </CarouselItem>
         )
@@ -146,7 +164,40 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         const pick = data.filter(d => d.years.includes(Number(e.currentTarget.value)))
         dateDropdown.selectedIndex = 0;
         image.current = Object.values(images).filter(i => i.includes(pick[0].name))
-        setAnimal(pick[0])
+
+        let friends = [];
+        let enemies = [];
+
+        for (const [k, v] of Object.entries(pick[0])) {
+            if(k === "friends") {
+                v.map(f => {
+                    friends.push({
+                        friend: f,
+                        image: Object.values(images).filter(i => i.includes(f))[0]
+                    })
+                })
+            }
+            if(k === "enemies") {
+                v.map(f => {
+                    enemies.push({
+                        friend: f,
+                        image: Object.values(images).filter(i => i.includes(f))[0]
+                    })
+                })
+            }
+        }
+
+        const animalData = {
+            name: pick[0].name,
+            image: image.current[0],
+            friends: friends,
+            enemies: enemies,
+            language: pick[0].language,
+            negative: pick[0].negative_traits,
+            positive: pick[0].positive_traits
+        }
+
+        setAnimal(animalData)
     }
 
     const dateScreenStyle = useSpring({
