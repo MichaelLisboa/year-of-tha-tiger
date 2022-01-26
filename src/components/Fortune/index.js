@@ -131,22 +131,22 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                 <h2>{animal.name}'s Compatibility</h2>
                 <div className="uk-margin">
                     {animal?.friends?.length >= 1 ?
-                    <div className="uk-grid uk-grid-small" data-uk-grid>
-                        <p className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</p>
+                    <div className="uk-grid uk-grid-small">
+                        <h5 className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
                         {animal.friends.map((f, i) =>
                             <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
-                                <img src={f.image} data-uk-img />
+                                <img src={f.image} />
                                 <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
                     </div>
                     : null}
                     {animal?.enemies?.length >= 1 ?
-                    <div className="uk-grid uk-grid-small uk-margin-medium-top" data-uk-grid>
-                        <p className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</p>
+                    <div className="uk-grid uk-grid-small uk-margin-medium-top">
+                        <h5 className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
                         {animal.enemies.map((f, i) =>
                             <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
-                                <img src={f.image} data-uk-img />
+                                <img src={f.image} />
                                 <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
@@ -282,7 +282,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                                 type="prev"
                                 onClick={slideToPrevItem}
                                 style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
-                                <img className="uk-light uk-svg" src={prev} width="48" data-uk-svg />
+                                <img className="uk-light uk-svg" src={prev} width="48" />
                             </button>
                             <button
                                 style={{borderStyle: "none", padding: "0"}}
@@ -293,7 +293,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                                 type="next"
                                 onClick={slideToNextItem}
                                 style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
-                                <img src={next} width="48" data-uk-svg />
+                                <img src={next} width="48" />
                             </button>
                         </div>
                     </CarouselContainer>
