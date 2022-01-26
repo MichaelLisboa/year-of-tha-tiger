@@ -13,7 +13,7 @@ const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) r
 const CarouselContainer = ({height, children}) => {
     return (
         <div
-            style={{height: height*0.7}}
+            style={{height: height*0.9}}
             className={`${style.deck}`}>
             {children}
         </div>
