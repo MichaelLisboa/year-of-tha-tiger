@@ -1,6 +1,5 @@
 html,
-body,
-main {
+body {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -15,12 +14,16 @@ main {
   user-select: none;
 }
 
-/* main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-} */
+main {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+nav {
+  background: transparent !important;
+}
 
 *:focus,
 .card:focus,

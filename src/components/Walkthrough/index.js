@@ -21,7 +21,7 @@ const Walkthrough = ({preload, setPreload, mobile}) => {
                 <div
                     style={{
                             border: "4px inset rgba(215, 80, 78, 0.4)",
-                            backgroundColor: "background-color: rgba(163, 41, 37, 0.8)",
+                            backgroundColor: "rgba(163, 41, 37, 0.7)",
                             borderRadius: "32px",
                             padding: "32px"
                         }}
