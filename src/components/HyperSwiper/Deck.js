@@ -128,14 +128,14 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images, setView}) => {
                 )}
                 <div className="uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center">
                     <div
-                        className="uk-width-1-1 uk-display-block uk-margin-large-bottom uk-box-shadow-medium uk-box-shadow-hover-large"
+                        className="uk-width-1-1 uk-display-block uk-box-shadow-medium uk-box-shadow-hover-large"
                         onClick={() => setView("fortune")}>
                         <img
                             style={{border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer"}}
                             src={checkFortuneImage} />
                     </div>
-                    <hr />
-                    <div className="uk-width-1-1 uk-display-block">
+                    <div className="uk-width-1-1 uk-light uk-text-center uk-text-small uk-margin-large-top uk-margin-medium-bottom">or</div>
+                    <div className="uk-width-1-1 uk-display-block uk-text-center">
                         <button
                             style={{color: "#fff", fontSize: "0.85rem"}}
                             onClick={() => setIsEmpty(true)} className="uk-button uk-button-small uk-button-text uk-text-uppercase">
