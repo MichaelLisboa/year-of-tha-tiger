@@ -86,7 +86,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <h2>{animal?.name}'s Personality</h2>
+                <div>
+                    <p className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom">{animal?.name}'s</p>
+                    <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
+                </div>
                 <div className="uk-margin-bottom">
                     <h5 className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</h5>
                     <p className="uk-margin-remove-vertical uk-padding-remove">
@@ -117,7 +120,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <h2>{animal.name}'s Fortune</h2>
+                <div>
+                    <p className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom">{animal?.name}'s</p>
+                    <h2 className="uk-margin-remove-top uk-padding-remove-top">Fortune</h2>
+                </div>
                 <p>{animal?.language?.jive?.forecast[0]}</p>
             </div>
           </CarouselItem>
@@ -128,7 +134,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div style={{height: "100%"}} className={`uk-padding`}>
-                <h2>{animal.name}'s Compatibility</h2>
+                <div>
+                    <p className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom">{animal?.name}'s</p>
+                    <h2 className="uk-margin-remove-top uk-padding-remove-top">Compatibility</h2>
+                </div>
                 <div className="uk-margin">
                     {animal?.friends?.length >= 1 ?
                     <div className="uk-grid uk-grid-small">
