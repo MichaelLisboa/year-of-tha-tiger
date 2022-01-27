@@ -51,7 +51,7 @@ export const zodiac = [{
 	"image": "../images/Tiger.png",
 	"language": {
 		"jive": {
-			"story": ["Tiger was a champ, runnin' fast and sleek. Tiger jumped in tha river swimmin' ‘cross but tha badass river current was draggin' Tiger far out tha race. Tiger swam harder n'faster ‘till finally got it across. Up ahead Tiger saw Ox's booty cross tha finish line, an'Tiger came in tha third place."],
+			"story": ["Tiger is a champ, and damn if Tiger don'know it. Runnin' fast and sleek, Tiger jumped in tha river swimmin' ‘cross but tha badass river current was draggin' Tiger far out tha race. Tiger swam harder n'faster ‘till finally got it across. Up ahead Tiger saw Ox's booty cross tha finish line, an'Tiger came in tha third place."],
 			"personality": ["People born in the Year of the Tiger are born leaders, who walk and talk assertively and inspire respect. They are courageous and energetic, love a challenge or competition and are prepared to take risks. They are hungry for excitement and crave attention. They can also be rebellious, short-tempered and outspoken, prefering to give orders rather than take them, which often leads to conflict. Tiger people may appear calm but there is often a hidden aggressiveness, but they can also be sensitive, humorous and capable of great generosity and love. There is never a dull moment with a Tiger."],
 			"forecast": ["As 2022 is Tigers' Ben Ming Nian (Zodiac Year of Birth), they are not blessed with too much good fortune according to Chinese astrology. To get through this not very lucky year, they are advised to be cautious in many aspects and speak less but do more. According to traditional Chinese folklore custom, red will be their lucky color to help reverse the bad situations."]
 		},
