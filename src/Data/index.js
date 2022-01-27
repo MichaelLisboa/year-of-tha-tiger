@@ -114,7 +114,7 @@ export const zodiac = [{
 	"image": "../images/Snake.png",
 	"language": {
 		"jive": {
-			"story": ["The snake came slithering up. The horse reared in shock as the snake calmly crossed the finish line to claim the sixth place and relegate the horse to seventh."],
+			"story": ["Snake’s a sly one, know what I’m sayin’? This one’s just chillin’ like a villain under a stone ‘til her come Horse trottin’ on by. Snake wraps around Horse’s foot and gets a free ride across tha badass river. When they gets to the otha side, Snake goes “booya!” and dun scares tha crap outta  Horse! Snake makes tha move an’comes in sixth."],
 			"personality": ["People born in the years of the Snake easily attract others for the mysterious character and graceful behaviors.They are calm and thorough and can always carry out a plan from the beginning to the end.Once in a dilemma, the Snake can be someone who leads people to get out of the woods.They also have a strong sense of responsibility and have a clear goal, which helps them to reach a peak in their career.The Snakes are typical deep thinkers who are perceptive and skeptical about everything.In the love aspect, the Snakes are devoted lovers who will not fall in love with someone else."],
 			"forecast": ["This is a year full of challenges for people born in the year of the Snake. The most important thing for them is to keep calm and rational, instead of impulsive.Under the premise and depending on their flexible and smart personalities, they can reverse the bad situation, or at least make the situation within control."]
 		},
