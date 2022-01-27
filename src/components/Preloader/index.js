@@ -52,7 +52,7 @@ const Preloader = ({setPreloader, ...props}) => {
                 <img
                     src={loading}
                     alt={"loading"}
-                    width="360"
+                    width="256"
                     data-uk-img />
             </a.div>
         </div>

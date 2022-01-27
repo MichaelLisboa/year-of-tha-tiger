@@ -87,11 +87,11 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
           <CarouselItem>
             <div className={`uk-padding`}>
                 <div>
-                    <h5 className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
+                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
                 </div>
                 <div className="uk-margin-bottom">
-                    <h5 className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</h5>
+                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</h5>
                     <p className="uk-margin-remove-vertical uk-padding-remove">
                     {animal?.positive?.map((p, i) =>
                         <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove" key={`${animal.name}-pos-${i}`}>
@@ -101,7 +101,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     </p>
                 </div>
                 <div>
-                    <h5 className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</h5>
+                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</h5>
                     <p className="uk-margin-remove-vertical uk-padding-remove">
                     {animal?.negative?.map((p, i) =>
                         <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove" key={`${animal.name}-pos-${i}`}>
@@ -116,12 +116,12 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         )
       },
       {
-        id: "CarouselItem-2",
+        id: "CarouselItem-3",
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
                 <div>
-                    <h5 className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
+                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Fortune</h2>
                 </div>
                 <p>{animal?.language?.jive?.forecast[0]}</p>
@@ -130,18 +130,18 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         )
       },
       {
-        id: "CarouselItem-2",
+        id: "CarouselItem-4",
         renderItem: (
           <CarouselItem>
             <div style={{height: "100%"}} className={`uk-padding`}>
                 <div>
-                    <h5 className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
+                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Compatibility</h2>
                 </div>
                 <div className="uk-margin">
                     {animal?.friends?.length >= 1 ?
                     <div className="uk-grid uk-grid-small">
-                        <h5 className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
+                        <h5 style={{lineHeight: "14px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
                         {animal.friends.map((f, i) =>
                             <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
                                 <img src={f.image} />
@@ -152,7 +152,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     : null}
                     {animal?.enemies?.length >= 1 ?
                     <div className="uk-grid uk-grid-small uk-margin-medium-top">
-                        <h5 className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
+                        <h5 style={{lineHeight: "14px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
                         {animal.enemies.map((f, i) =>
                             <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
                                 <img src={f.image} />
