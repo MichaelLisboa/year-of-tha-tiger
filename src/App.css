@@ -38,13 +38,12 @@ h1 {
 h2 {
   font-family: 'Monoton', "Helvetica", "Arial", sans-serif !important;
   line-height: 0.5rem;
-  /* font-size: 72px; */
-background: #FF8000;
-background: -webkit-linear-gradient(to bottom, #FF8000 0%, #AB1700 100%);
-background: -moz-linear-gradient(to bottom, #FF8000 0%, #AB1700 100%);
-background: linear-gradient(to bottom, #FF8000 0%, #AB1700 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
+  background: #FF8000;
+  background: -webkit-linear-gradient(to bottom, #FF8000 0%, #AB1700 100%);
+  background: -moz-linear-gradient(to bottom, #FF8000 0%, #AB1700 100%);
+  background: linear-gradient(to bottom, #FF8000 0%, #AB1700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h3 {

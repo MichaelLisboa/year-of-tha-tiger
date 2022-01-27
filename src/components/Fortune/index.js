@@ -86,7 +86,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <div>
+                <div className="uk-text-center">
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
                 </div>
@@ -120,7 +120,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div className={`uk-padding`}>
-                <div>
+                <div className="uk-text-center">
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Fortune</h2>
                 </div>
@@ -134,7 +134,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         renderItem: (
           <CarouselItem>
             <div style={{height: "100%"}} className={`uk-padding`}>
-                <div>
+                <div className="uk-text-center">
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Compatibility</h2>
                 </div>
