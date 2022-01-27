@@ -87,7 +87,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
           <CarouselItem>
             <div className={`uk-padding`}>
                 <div>
-                    <p className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom">{animal?.name}'s</p>
+                    <h5 className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
                 </div>
                 <div className="uk-margin-bottom">
@@ -121,7 +121,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
           <CarouselItem>
             <div className={`uk-padding`}>
                 <div>
-                    <p className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom">{animal?.name}'s</p>
+                    <h5 className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Fortune</h2>
                 </div>
                 <p>{animal?.language?.jive?.forecast[0]}</p>
@@ -135,7 +135,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
           <CarouselItem>
             <div style={{height: "100%"}} className={`uk-padding`}>
                 <div>
-                    <p className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom">{animal?.name}'s</p>
+                    <h5 className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Compatibility</h2>
                 </div>
                 <div className="uk-margin">
