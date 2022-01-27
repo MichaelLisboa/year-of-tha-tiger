@@ -1,5 +1,6 @@
 import React from "react";
-import { useSpring, animated as a } from "react-spring"
+import { useSpring, animated as a } from "react-spring";
+import headlineImage from "../../images/long-time-ago.png"
 import style from "./Walkthrough.module.css";
 
 const Walkthrough = ({preload, setPreload, mobile}) => {
@@ -27,7 +28,9 @@ const Walkthrough = ({preload, setPreload, mobile}) => {
                         }}
                     className="uk-width-1-2@s uk-flex uk-flex-column uk-flex-middle uk-flex-center">
                     <div>
-                        <p style={{fontSize: "1.85em", color: "#fff", fontWeight: "800"}} className="uk-text-nowrap">A long azz time'go...</p>
+                        <div style={{marginTop: "-50px"}} className="uk-width-1-1 uk-text-center uk-margin-small-bottom">
+                            <img style={{maxWidth: "300px"}} src={headlineImage} data-uk-img />
+                        </div>
                         <div>
                             <p className="uk-h5 uk-margin-small">Jade Emperuh wants t'select twelve badass animals to be his muthafunkin' Royal Guards, see?</p>
                             <p className="uk-h5 uk-margin-small">He spread tha damn message all through his lands, bein' like,</p>
