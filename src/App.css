@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 html,
 body {
   margin: 0;
@@ -12,6 +14,32 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Monoton', "Arial Black", "Helvetica", sans-serif !important;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-family: 'Monoton', "Arial Black", "Helvetica", sans-serif;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+h2 {
+  font-family: 'Monoton', "Helvetica", "Arial", sans-serif !important;
+  letter-spacing: -1px;
+  line-height: 0.8;
+}
+
+h3 {
+  font-family: 'Monoton', "Helvetica", "Arial", sans-serif !important;
+  letter-spacing: -1px;
+  line-height: 0.875rem !important;
 }
 
 main {
@@ -39,14 +67,14 @@ textarea:focus {
 @media screen and (min-width: 640px) {
   html,
   .uk-h5 {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680)) !important;
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680)) !important;
   }
 }
 
 @media screen and (min-width: 1000px) {
   html,
   .uk-h5 {
-    font-size: 24px !important;
+    font-size: 18px !important;
   }
 }
 
