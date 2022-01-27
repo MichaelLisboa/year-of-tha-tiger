@@ -6,9 +6,8 @@ import HyperSwiper from "./components/HyperSwiper";
 import Fortune from "./components/Fortune";
 import './App.css';
 import "./styles/uikit.css";
-import {zodiac, elements} from './Data/index.js'
+import {zodiac} from './Data/index.js'
 import logo from "./images/tiger-icon.png"
-import checkFortuneImage from "./images/check-fortune-button.png"
 import info from "./images/icons/info-white.svg";
 
 function importAll(r) {
@@ -17,20 +16,41 @@ function importAll(r) {
         return images;
     }
 
+function loadImages(images) {
+    let pImages = []
+    for (const [k, v] of Object.entries(images)) {
+        pImages.push({name: k, img:v})
+    }
+    return pImages
+}
+
+// const preloadImages = () => {
+//     let pImages = []
+//     for (const [k, v] of Object.entries(images)) {
+//         pImages.push(<img key={`img-${k}`} src={v} alt={k} />)
+//     }
+//     console.log("LOADING IMAGES", pImages)
+//     return pImages
+// }
+
 const App = () => {
     const { prompt } = useIsIOS();
-    // const [modalOpen, setModalOpen, toggleModal] = useModal();
     const [view, setView] = useState("story");
     const [preload, setPreload] = useState(true);
     const [mobile, setMobile] = useState(false);
-    const [images, setImages] = useState([])
-
-    console.log(elements)
+    const [images, setImages] = useState({})
+    const [preloadImages, setPreloadImages] = useState([])
 
     useEffect(
         () => {
             setImages(importAll(require.context('./images/characters', false, /\.(png|jpe?g|svg)$/)));
         }, []
+    )
+
+    useEffect(
+        () => {
+            setPreloadImages(loadImages(images))
+        }, [images]
     )
 
     useEffect(
@@ -111,6 +131,21 @@ const App = () => {
                 <Fortune setView={setView} zodiac={zodiac} images={images} />
             }
             {prompt && <InstallPWA />}
+            {preloadImages && preloadImages?.length ?
+            <div
+                style={{
+                    position: "absolute",
+                    top: "-5000px",
+                    zIndex: "-10",
+                    height: "1px",
+                    width: "1px",
+                    overflow: "hidden"
+                }}>
+                {preloadImages.map((img, i) =>
+                    <img key={`img-${img.name}`} src={img.img} alt={img.name} />
+                )}
+            </div>
+            : null }
         </main>
         </>
         );
