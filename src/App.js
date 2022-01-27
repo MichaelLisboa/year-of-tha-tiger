@@ -11,10 +11,10 @@ import logo from "./images/tiger-icon.png"
 import info from "./images/icons/info-white.svg";
 
 function importAll(r) {
-        let images = {};
-        r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
-        return images;
-    }
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
 
 function loadImages(images) {
     let pImages = []
@@ -23,15 +23,6 @@ function loadImages(images) {
     }
     return pImages
 }
-
-// const preloadImages = () => {
-//     let pImages = []
-//     for (const [k, v] of Object.entries(images)) {
-//         pImages.push(<img key={`img-${k}`} src={v} alt={k} />)
-//     }
-//     console.log("LOADING IMAGES", pImages)
-//     return pImages
-// }
 
 const App = () => {
     const { prompt } = useIsIOS();
