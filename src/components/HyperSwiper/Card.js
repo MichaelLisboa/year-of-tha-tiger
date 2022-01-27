@@ -52,7 +52,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                                 position: "relative",
                                 color: "#fff",
                                 fontWeight: "600",
-                                fontSize: "1.1rem",
+                                fontSize: "1rem",
                                 border: "1px solid rgba(255, 255, 255, 0.5)",
                                 borderRadius: "8px",
                                 paddingLeft: "24px",
@@ -66,7 +66,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                             }
                             </p>
                         <p
-                            style={{fontWeight: "600", lineHeight: "1.25rem"}}
+                            style={{lineHeight: "1.25rem"}}
                             className="uk-padding-remove-top uk-margin-remove-top uk-flex uk-flex-middle">{card.language.jive.story}</p>
                     </a.div>
                 </div>
