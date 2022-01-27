@@ -66,8 +66,8 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                             }
                             </p>
                         <p
-                            style={{lineHeight: "1.25rem"}}
-                            className="uk-padding-remove-top uk-margin-remove-top uk-flex uk-flex-middle">{card.language.jive.story}</p>
+                            style={{lineHeight: "1.25rem", overflowY: "scroll"}}
+                            className="uk-padding-remove-top uk-margin-remove-top uk-flex uk-flex-top">{card.language.jive.story}</p>
                     </a.div>
                 </div>
             </a.div>
