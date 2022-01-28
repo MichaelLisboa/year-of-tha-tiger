@@ -1,27 +1,28 @@
 {
-  "short_name": "HyperSwiper",
-  "name": "HyperSwiper by Michal Lisboa",
+  "short_name": "幸福,繁荣和迪斯科",
+  "name": "幸福,繁荣和迪斯科 by Michal Lisboa",
   "icons": [
     {
-      "src": "favicon/favicon-32x32.png",
+      "src": "favicon-32x32.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "favicon/android-chrome-192x192.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "favicon/android-chrome-512x512.png",
+      "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
+  "id": "/?homescreen=CNY2022",
   "start_url": "/?utm_source=A2HS&utm_medium=CNY2022",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#A32925",
+  "background_color": "#A32925"
 }
