@@ -3,25 +3,25 @@
   "name": "HyperSwiper by Michal Lisboa",
   "icons": [
     {
-      "src": "favicon/favicon-32x32.png",
+      "src": "favicon-32x32.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "favicon/android-chrome-192x192.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "favicon/android-chrome-512x512.png",
+      "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?utm_source=A2HS&utm_medium=CNY2022",
+  "start_url": "/?utm_source=A2HS&utm_medium=HyperSwiper",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#4C4C68",
+  "background_color": "#505064"
 }
