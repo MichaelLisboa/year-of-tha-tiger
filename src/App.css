@@ -75,15 +75,13 @@ textarea:focus {
 }
 
 @media screen and (min-width: 640px) {
-  html,
-  .uk-h5 {
+  html {
     font-size: calc(14px + 6 * ((100vw - 320px) / 680)) !important;
   }
 }
 
 @media screen and (min-width: 1000px) {
-  html,
-  .uk-h5 {
+  html {
     font-size: 18px !important;
   }
 }
