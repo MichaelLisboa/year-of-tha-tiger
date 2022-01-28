@@ -141,10 +141,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                 <div className="uk-margin">
                     {animal?.friends?.length >= 1 ?
                     <div className="uk-grid uk-grid-small">
-                        <h5 style={{lineHeight: "14px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
+                        <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
                         {animal.friends.map((f, i) =>
                             <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
-                                <img src={f.image} />
+                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image} data-uk-img />
                                 <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
@@ -152,10 +152,10 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     : null}
                     {animal?.enemies?.length >= 1 ?
                     <div className="uk-grid uk-grid-small uk-margin-medium-top">
-                        <h5 style={{lineHeight: "14px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
+                        <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
                         {animal.enemies.map((f, i) =>
                             <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
-                                <img src={f.image} />
+                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image} data-uk-img />
                                 <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
