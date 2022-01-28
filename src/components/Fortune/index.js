@@ -94,7 +94,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</h5>
                     <p className="uk-margin-remove-vertical uk-padding-remove">
                     {animal?.positive?.map((p, i) =>
-                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove" key={`${animal.name}-pos-${i}`}>
+                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap uk-text-capitalize" key={`${animal.name}-pos-${i}`}>
                             {p}
                         </small>
                     )}
@@ -104,7 +104,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</h5>
                     <p className="uk-margin-remove-vertical uk-padding-remove">
                     {animal?.negative?.map((p, i) =>
-                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap" key={`${animal.name}-pos-${i}`}>
+                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap uk-text-capitalize" key={`${animal.name}-neg-${i}`}>
                             {p}
                         </small>
                     )}
