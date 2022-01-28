@@ -110,7 +110,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     )}
                     </div>
                 </div>
-                <p>{animal?.language?.jive?.personality[0]}</p>
+                <p>{animal?.language?.english?.personality[0]}</p>
             </div>
           </CarouselItem>
         )
@@ -124,7 +124,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top uk-text-nowrap">Funky Fortune</h2>
                 </div>
-                <p>{animal?.language?.jive?.forecast[0]}</p>
+                <p>{animal?.language?.english?.forecast[0]}</p>
             </div>
           </CarouselItem>
         )
