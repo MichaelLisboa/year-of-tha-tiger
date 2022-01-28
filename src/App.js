@@ -103,7 +103,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
-            <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
+            <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical uk-hidden">
                 <div className="uk-navbar-item">
                     <a
                         style={{height: "16px", fontSize: "12px", color: "#fff"}}
