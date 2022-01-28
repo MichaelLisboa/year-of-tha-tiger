@@ -10,7 +10,7 @@ export const zodiac = [{
 	"language": {
 		"jive": {
 			"story": ["Rat was gettin' his groove on to tha Gate, but runs up on a river and stopped, knowin' tha current was badass. Afta' chillin' a time, Rat seen Ox about t'cross tha riva' see? So Rat boogied into Ox's ear. Afta' crossin' tha riva', Rat jumped off an'raced to tha Heavenly Gate comin' up first place. Rat din't even thank Ox, yo!"],
-			"personality": ["Folks who wuz born in de Year uh de Rat are said t'be quick-witted, resourceful, and smart but lack courage. What it is! Due t’their work ethic, however, dey are thought t'be rich and prospuh'ous. Lucky colorz, dig dis: blue, gold, green. Right on, right on. Dey are always considerate uh deir families and homeys."],
+			"personality": ["Folks who wuz born in de Year uh de Rat are said t'be quick-witted, resourceful, and smart but lack courage. What it is! Due t’their work ethic, however, dey are thought t'be rich and prospuh'ous. Right on, right on. Dey are always considerate uh deir families and homeys. Lucky colorz, dig dis: blue, gold, green."],
 			"forecast": ["Rat needs lots uh patience t'serve tha Tiger. Ah get tha funk! Devotin' mo' time t'yo' career wid passion will brin' ya' some betta' money and recognition. In 2022 you gettin’ wild goood luck wid tha gold. Yo' health should be groovie, ya' should go out fo' walkin', joggin', sunbad-assin', gardenin', cyclin', o' hikin'. What it is. You's duzn't gotss'ta try  t’please sucka's. As long as ya' sincerely manage homeys, ya' gotss'ta eventually earn yo' reputashun. 'S coo', fam."]
 		},
 		"english": {
@@ -31,7 +31,7 @@ export const zodiac = [{
 	"language": {
 		"jive": {
 			"story": ["Ox was all good groovin' on land and in tha'water. When Rat hitched a ride, Ox don't mind just kept on doin' tha hustle 'cross the river. When Ox got across 'n Rat raced ahead, Ox don't trip, 'cuz being first in line means being first in trouble, so Ox was mo'than happy at second place."],
-			"personality": ["An Ox be said t'gotss' an honest personality. Get down! Right On! People bo'n in de Year de Ox are known fo' bein' diligent, dependable, strong, and determined, but find it difficult t'communicate. What it is. Lucky colo's, dig dis: white, yellow, green. 'S coo', bro. They are sometimes stubborn and stick to their own ways."],
+			"personality": ["An Ox be said t'gotss' an honest personality. Get down! Right On! People bo'n in de Year de Ox are known fo' bein' diligent, dependable, strong, and determined, but find it difficult t'communicate. What it is. They are sometimes stubborn and stick to their own ways. Lucky colo's, dig dis: white, yellow, green. 'S coo', bro. "],
 			"forecast": ["People born in the year of the Ox will have a better time in 2022 with good health, an enjoyable love life, and a smooth career path. Single Oxes will have a big chance to find a girlfriend / boyfriend or get married. Oxes can expect good help from other people in 2022, but personal effort is still the most important.Their career luck will be good with a high possibility of getting promoted. Oxes' luck with money will fluctuate. There might be some trouble or an accident, resulting in financial loss. Oxes should be careful of entering into monetary relationships with others in 2022."]
 		},
 		"english": {
