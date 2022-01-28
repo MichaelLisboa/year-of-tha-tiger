@@ -9,7 +9,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
     const image = Object.values(images).filter(i => i.includes(card.name))
 
     const {height} = useSpring({
-        height: storyExpanded ? "50%" : "8%",
+        height: storyExpanded ? "60%" : "8%",
         config: {
             mass: 3,
             tension: 500,
