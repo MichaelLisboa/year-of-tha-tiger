@@ -119,12 +119,12 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
         id: "CarouselItem-3",
         renderItem: (
           <CarouselItem>
-            <div className={`uk-padding`}>
+            <div  className={`uk-padding`}>
                 <div className="uk-text-center">
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top uk-text-nowrap">Funky Fortune</h2>
                 </div>
-                <p>{animal?.language?.english?.forecast[0]}</p>
+                <div><p>{animal?.language?.english?.forecast[0]}</p></div>
             </div>
           </CarouselItem>
         )

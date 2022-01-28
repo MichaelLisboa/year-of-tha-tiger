@@ -34,7 +34,6 @@
   flex-direction: column;
   align-self: center;
   width: 100%;
-  touch-action: pan-x;
 }
 
 .sliderContainer::after,
