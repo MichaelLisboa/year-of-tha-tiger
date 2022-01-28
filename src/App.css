@@ -19,11 +19,11 @@ p {
 
 @media screen and (min-height: 0) {
   p {
-    font-size: 1rem;
+    font-size: 0.879em;
   }
 }
 
-@media screen and (min-height: 580px) {
+@media screen and (min-height: 820px) {
   p {
     font-size: 1.1em;
   }
@@ -31,7 +31,7 @@ p {
 
 @media screen and (min-height: 920px) {
   p {
-    font-size: 1.3rem;
+    font-size: 1.3em;
   }
 }
 
