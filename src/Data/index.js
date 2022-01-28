@@ -31,7 +31,7 @@ export const zodiac = [{
 	"language": {
 		"jive": {
 			"story": ["Ox was all good groovin' on land and in tha'water. When Rat hitched a ride, Ox don't mind just kept on doin' tha hustle 'cross the river. When Ox got across 'n Rat raced ahead, Ox don't trip, 'cuz being first in line means being first in trouble, so Ox was mo'than happy at second place."],
-			"personality": ["Having an honest nature, the Ox is known for diligence, dependability, strength and determination.These reflect traditional conservative characteristics.Having great patience and a desire to make progress, Oxes can achieve their goals by consistent effort.They are not much influenced by others or the environment, but persist in doing things according to their ideas and capabilities. Before taking any action Oxes will have a definite plan, with detailed steps, to which they apply their strong faith and physical strength.As a result, people of the Ox sign often enjoy great success. Oxes are usually not good at communicating with others, and even think it is not worthwhile to exchange ideas with others.They are sometimes stubborn and stick to their own ways."],
+			"personality": ["An Ox be said t'gotss' an honest personality. Get down! Right On! People bo'n in de Year de Ox are known fo' bein' diligent, dependable, strong, and determined, but find it difficult t'communicate. What it is. Lucky colo's, dig dis: white, yellow, green. 'S coo', bro. They are sometimes stubborn and stick to their own ways."],
 			"forecast": ["People born in the year of the Ox will have a better time in 2022 with good health, an enjoyable love life, and a smooth career path. Single Oxes will have a big chance to find a girlfriend / boyfriend or get married. Oxes can expect good help from other people in 2022, but personal effort is still the most important.Their career luck will be good with a high possibility of getting promoted. Oxes' luck with money will fluctuate. There might be some trouble or an accident, resulting in financial loss. Oxes should be careful of entering into monetary relationships with others in 2022."]
 		},
 		"english": {
@@ -236,7 +236,7 @@ export const zodiac = [{
 	"friends": ["Tiger", "Rabbit", "Goat"],
 	"enemies": ["Snake", "Monkey"],
 	"positive_traits": ["intelligent", "creative", "compassionate"],
-	"negative_traits": ["gullible", "insecure" "emotional"],
+	"negative_traits": ["gullible", "insecure", "emotional"],
 	"image": "../images/Pig.png",
 	"language": {
 		"jive": {
