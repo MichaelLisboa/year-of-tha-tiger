@@ -3,6 +3,7 @@
 
 html,
 body {
+  font-size: 14px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -14,24 +15,25 @@ body {
 
 p {
   font-family: 'Poppins', "Arial", "Helvetica", sans-serif !important;
-  line-height: 1.5rem;
+  line-height: 1.3;
 }
 
-@media screen and (max-height: 639px) {
+
+@media screen and (min-height: 540px) {
   p {
-    font-size: calc(16px - 2 * ((100vw - 320px) / 640)) !important;
+    font-size: 14px !important;
   }
 }
 
-@media screen and (max-height: 640px) {
-  html {
-    font-size: calc(16px - 6 * ((100vw - 320px) / 680)) !important;
+@media screen and (min-height: 800px) {
+  p {
+    font-size: 16px !important;
   }
 }
 
 @media screen and (min-height: 1000px) {
-  html {
-    font-size: 16px !important;
+  p {
+    font-size: 18px !important;
   }
 }
 
