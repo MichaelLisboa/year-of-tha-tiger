@@ -3,7 +3,6 @@
 
 html,
 body {
-  font-size: 14px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -15,7 +14,25 @@ body {
 
 p {
   font-family: 'Poppins', "Arial", "Helvetica", sans-serif !important;
-  line-height: 1.2;
+  line-height: 1.5rem;
+}
+
+@media screen and (max-height: 639px) {
+  p {
+    font-size: calc(16px - 2 * ((100vw - 320px) / 640)) !important;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  html {
+    font-size: calc(16px - 6 * ((100vw - 320px) / 680)) !important;
+  }
+}
+
+@media screen and (min-height: 1000px) {
+  html {
+    font-size: 16px !important;
+  }
 }
 
 h1,

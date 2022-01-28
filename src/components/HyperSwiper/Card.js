@@ -17,6 +17,11 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
         }
     })
 
+    const animalStory = useSpring({
+        height: "100%",
+        opacity: storyExpanded ? 1 : 0
+    })
+
     return (
         <a.div
             {...bind(current)}
@@ -52,7 +57,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                                 position: "relative",
                                 color: "#fff",
                                 fontWeight: "600",
-                                fontSize: "1rem",
+                                fontSize: "16px",
                                 border: "1px solid rgba(255, 255, 255, 0.5)",
                                 borderRadius: "8px",
                                 paddingLeft: "24px",
@@ -65,9 +70,9 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                                 <span>{window.innerWidth <= 640 ? "Tap" : "Click"} fo' {card.name}'s story</span>
                             }
                             </p>
-                        <p
-                            style={{lineHeight: "1.3"}}
-                            className="uk-padding-remove-top uk-margin-remove-top uk-flex uk-flex-top">{card.language.jive.story}</p>
+                        <a.div style={animalStory} className="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+                            <p className="uk-flex uk-flex-column uk-flex-between">{card.language.jive.story}</p>
+                        </a.div>
                     </a.div>
                 </div>
             </a.div>
