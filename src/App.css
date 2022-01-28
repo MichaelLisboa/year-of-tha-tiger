@@ -3,6 +3,7 @@
 
 html,
 body {
+  font-size: 14px;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -14,6 +15,7 @@ body {
 
 p {
   font-family: 'Poppins', "Arial", "Helvetica", sans-serif !important;
+  line-height: 1.2;
 }
 
 h1,
@@ -77,23 +79,6 @@ textarea:focus {
   text-decoration: none;
 }
 
-@media screen and (max-width: 639px) {
-  p {
-    font-size: calc(16px + 2 * ((100vw - 320px) / 640)) !important;
-  }
-}
-
-@media screen and (min-width: 640px) {
-  html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680)) !important;
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  html {
-    font-size: 18px !important;
-  }
-}
 
 .fadeOut {
   -webkit-animation: fadeoutfromone 1s ease-out forwards;

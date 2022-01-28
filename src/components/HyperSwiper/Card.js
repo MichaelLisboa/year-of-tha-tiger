@@ -66,7 +66,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                             }
                             </p>
                         <p
-                            style={{lineHeight: "1.35rem"}}
+                            style={{lineHeight: "1.3"}}
                             className="uk-padding-remove-top uk-margin-remove-top uk-flex uk-flex-top">{card.language.jive.story}</p>
                     </a.div>
                 </div>
