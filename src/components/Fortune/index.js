@@ -151,7 +151,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     </div>
                     : null}
                     {animal?.enemies?.length >= 1 ?
-                    <div className="uk-grid uk-grid-small uk-margin-medium-top">
+                    <div className="uk-grid uk-grid-small uk-margin-top">
                         <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
                         {animal.enemies.map((f, i) =>
                             <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
