@@ -44,7 +44,7 @@ const About = ({setView, ...props}) => {
                 <div>
                     <div className="uk-card uk-card-small uk-card-default uk-border-rounded">
                         <div className="uk-card-media-top">
-                            <img src={michael} alt="Michael Lisboa" />
+                            <img style={{borderRadius: "6px 6px 0 0"}} src={michael} alt="Michael Lisboa" />
                         </div>
                         <div className="uk-card-body">
                             <h2 style={{fontSize: "32px"}} className="uk-text-nowrap uk-margin-remove-vertical">Michael</h2>
@@ -57,7 +57,7 @@ const About = ({setView, ...props}) => {
                 <div>
                     <div className="uk-card uk-card-small uk-card-default uk-border-rounded">
                         <div className="uk-card-media-top">
-                            <img src={kathleen} alt="Michael Lisboa" />
+                            <img style={{borderRadius: "6px 6px 0 0"}} src={kathleen} alt="Kathleen Irena" />
                         </div>
                         <div className="uk-card-body">
                             <h2 style={{fontSize: "32px"}} className="uk-text-nowrap uk-margin-remove-vertical">Kathleen</h2>
@@ -70,7 +70,7 @@ const About = ({setView, ...props}) => {
                 <div>
                     <div className="uk-card uk-card-small uk-card-default uk-border-rounded uk-box-shadow-medium">
                         <div className="uk-card-media-top">
-                            <img src={migs} alt="Martinus Michael" />
+                            <img style={{borderRadius: "6px 6px 0 0"}} src={migs} alt="Martinus Michael" />
                         </div>
                         <div className="uk-card-body">
                             <h2 style={{fontSize: "32px"}} className="uk-text-nowrap uk-margin-remove-vertical">Migs</h2>
