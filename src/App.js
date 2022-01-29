@@ -71,6 +71,19 @@ const App = () => {
         }, []
     )
 
+    const active = selected => {
+
+        const options = {
+            height: "16px",
+            fontSize: "12px",
+            textDecoration: "none",
+            color: view === selected ? "rgba(255, 255, 255, 1)" : "rgba(255, 255, 255, 0.8)",
+            borderBottom: view === selected ? "solid 2px #fff" : "solid 2px transparent"
+        }
+
+        return options
+    }
+
     return (
         <>
         <div id="loadingOverlayPWA"
@@ -88,7 +101,7 @@ const App = () => {
                 <div className="uk-navbar-left uk-padding-remove-vertical uk-margin-remove-vertical">
                     <div className="uk-navbar-item">
                         <a
-                            style={{height: "16px", fontSize: "12px", color: "#fff"}}
+                            style={active("story")}
                             className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
                             onClick={() => setView("story")}>Check tha story</a>
                     </div>
@@ -97,7 +110,7 @@ const App = () => {
                 <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
                     <div className="uk-navbar-item">
                         <a
-                            style={{height: "16px", fontSize: "12px", color: "#fff"}}
+                            style={active("fortune")}
                             className="uk-padding-remove-vertical uk-margin-remove-vertical uk-text-uppercase uk-text-bold"
                             onClick={() => setView("fortune")}>Get yo' fortune</a>
                     </div>
