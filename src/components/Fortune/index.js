@@ -90,8 +90,8 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
                 </div>
-                <div className="uk-margin-bottom">
-                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</h5>
+                <div className="uk-margin-small-bottom">
+                    <p style={{lineHeight: "8px"}} className="uk-text-small uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</p>
                     <div className="uk-margin-remove-vertical uk-padding-remove">
                     {animal?.positive?.map((p, i) =>
                         <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-pos-${i}`}>
@@ -100,17 +100,17 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     )}
                     </div>
                 </div>
-                <div>
-                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</h5>
+                <div className="uk-margin-small-bottom">
+                    <p style={{lineHeight: "8px"}} className="uk-text-small uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</p>
                     <div className="uk-margin-remove-vertical uk-padding-remove">
                     {animal?.negative?.map((p, i) =>
-                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-neg-${i}`}>
+                        <small className="uk-margin-right uk-margin-remove-top uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-neg-${i}`}>
                             {p}
                         </small>
                     )}
                     </div>
                 </div>
-                <p>{animal?.language?.english?.personality[0]}</p>
+                <div><p className="scale-text">{animal?.language?.english?.personality[0]}</p></div>
             </div>
           </CarouselItem>
         )
@@ -124,7 +124,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top uk-text-nowrap">Funky Fortune</h2>
                 </div>
-                <div><p>{animal?.language?.english?.forecast[0]}</p></div>
+                <div><p className="scale-text">{animal?.language?.english?.forecast[0]}</p></div>
             </div>
           </CarouselItem>
         )

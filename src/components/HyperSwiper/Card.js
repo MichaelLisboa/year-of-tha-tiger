@@ -71,7 +71,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                             }
                             </p>
                         <a.div style={animalStory} className="uk-flex uk-flex-column uk-flex-middle uk-flex-center">
-                            <p className="uk-flex uk-flex-column uk-flex-between">{card.language.jive.story}</p>
+                            <p className="scale-text uk-flex uk-flex-column uk-flex-between">{card.language.jive.story}</p>
                         </a.div>
                     </a.div>
                 </div>
