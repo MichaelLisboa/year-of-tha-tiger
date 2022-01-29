@@ -3123,6 +3123,85 @@ ul.uk-nav-sub {
   text-align: left;
 }
 /* ========================================================================
+   Component: Dotnav
+ ========================================================================== */
+/*
+ * 1. Allow items to wrap into the next line
+ * 2. Reset list
+ * 3. Gutter
+ */
+.uk-dotnav {
+  display: flex;
+  /* 1 */
+  flex-wrap: wrap;
+  /* 2 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* 3 */
+  margin-left: -12px;
+}
+/*
+ * 1. Space is allocated solely based on content dimensions: 0 0 auto
+ * 2. Gutter
+ */
+.uk-dotnav > * {
+  /* 1 */
+  flex: none;
+  /* 2 */
+  padding-left: 12px;
+}
+/* Items
+ ========================================================================== */
+/*
+ * Items
+ * 1. Hide text if present
+ */
+.uk-dotnav > * > * {
+  display: block;
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(102, 102, 102, 0.2);
+  /* 1 */
+  text-indent: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* Hover + Focus */
+.uk-dotnav > * > :hover,
+.uk-dotnav > * > :focus {
+  background-color: rgba(102, 102, 102, 0.6);
+  outline: none;
+}
+/* OnClick */
+.uk-dotnav > * > :active {
+  background-color: rgba(102, 102, 102, 0.2);
+}
+/* Active */
+.uk-dotnav > .uk-active > * {
+  background-color: rgba(102, 102, 102, 0.6);
+}
+/* Modifier: 'uk-dotnav-vertical'
+ ========================================================================== */
+/*
+ * 1. Change direction
+ * 2. Gutter
+ */
+.uk-dotnav-vertical {
+  /* 1 */
+  flex-direction: column;
+  /* 2 */
+  margin-left: 0;
+  margin-top: -12px;
+}
+/* 2 */
+.uk-dotnav-vertical > * {
+  padding-left: 0;
+  padding-top: 12px;
+}
+/* ========================================================================
    Component: Lightbox
  ========================================================================== */
 /*
@@ -7467,6 +7546,49 @@ iframe.uk-cover {
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-close:hover,
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-close:focus {
   color: rgba(255, 255, 255, 0.7);
+}
+.uk-light .uk-dotnav > * > *,
+.uk-section-primary:not(.uk-preserve-color) .uk-dotnav > * > *,
+.uk-section-secondary:not(.uk-preserve-color) .uk-dotnav > * > *,
+.uk-card-primary.uk-card-body .uk-dotnav > * > *,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-dotnav > * > *,
+.uk-card-secondary.uk-card-body .uk-dotnav > * > *,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-dotnav > * > * {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.uk-light .uk-dotnav > * > :hover,
+.uk-light .uk-dotnav > * > :focus,
+.uk-section-primary:not(.uk-preserve-color) .uk-dotnav > * > :hover,
+.uk-section-primary:not(.uk-preserve-color) .uk-dotnav > * > :focus,
+.uk-section-secondary:not(.uk-preserve-color) .uk-dotnav > * > :hover,
+.uk-section-secondary:not(.uk-preserve-color) .uk-dotnav > * > :focus,
+.uk-card-primary.uk-card-body .uk-dotnav > * > :hover,
+.uk-card-primary.uk-card-body .uk-dotnav > * > :focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-dotnav > * > :hover,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-dotnav > * > :focus,
+.uk-card-secondary.uk-card-body .uk-dotnav > * > :hover,
+.uk-card-secondary.uk-card-body .uk-dotnav > * > :focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-dotnav > * > :hover,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-dotnav > * > :focus {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+.uk-light .uk-dotnav > * > :active,
+.uk-section-primary:not(.uk-preserve-color) .uk-dotnav > * > :active,
+.uk-section-secondary:not(.uk-preserve-color) .uk-dotnav > * > :active,
+.uk-card-primary.uk-card-body .uk-dotnav > * > :active,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-dotnav > * > :active,
+.uk-card-secondary.uk-card-body .uk-dotnav > * > :active,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-dotnav > * > :active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.uk-light .uk-dotnav > .uk-active > *,
+.uk-section-primary:not(.uk-preserve-color) .uk-dotnav > .uk-active > *,
+.uk-section-secondary:not(.uk-preserve-color) .uk-dotnav > .uk-active > *,
+.uk-card-primary.uk-card-body .uk-dotnav > .uk-active > *,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-dotnav > .uk-active > *,
+.uk-card-secondary.uk-card-body .uk-dotnav > .uk-active > *,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-dotnav > .uk-active > * {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .uk-light .uk-text-lead,
 .uk-section-primary:not(.uk-preserve-color) .uk-text-lead,

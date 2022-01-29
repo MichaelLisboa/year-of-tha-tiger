@@ -4,6 +4,7 @@ import {InstallPWA} from "./components/InstallPWA"
 import Walkthrough from "./components/Walkthrough"
 import HyperSwiper from "./components/HyperSwiper";
 import Fortune from "./components/Fortune";
+import About from "./components/About";
 import './App.css';
 import "./styles/uikit.css";
 import {zodiac} from './Data/index.js'
@@ -116,7 +117,7 @@ const App = () => {
                     </div>
                 </div>
             </div>
-            <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical uk-hidden">
+            <div className="uk-navbar-right uk-padding-remove-vertical uk-margin-remove-vertical">
                 <div className="uk-navbar-item">
                     <a
                         style={{height: "16px", fontSize: "12px", color: "#fff"}}
@@ -132,7 +133,9 @@ const App = () => {
             {view === "story" ?
                 <HyperSwiper setView={setView} preload={preload} zodiac={zodiac} images={images} />
             :
+                view === "fortune" ?
                 <Fortune setView={setView} zodiac={zodiac} images={images} />
+                : <About setView={setView} />
             }
             {/*prompt && <InstallPWA />*/}
             {preloadImages && preloadImages?.length ?
