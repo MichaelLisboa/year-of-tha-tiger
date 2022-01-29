@@ -62,7 +62,7 @@ const About = ({setView, ...props}) => {
                         <div className="uk-card-body">
                             <h2 style={{fontSize: "20px"}} className="uk-text-nowrap uk-margin-remove-vertical">Kathleen Irena</h2>
                             <small className="uk-display-block">LEAD UX DESIGNER</small>
-                            <p className="uk-text-small">Kathleen did all the illustrations. Nice huh? She was born in The Year of the Pig, which means she creative, intelligent, and compassionate. She's also gullible. A fact that I take advantage of often.</p>
+                            <p className="uk-text-small">Kathleen did all the illustrations. Nice huh? She was born in The Year of the Pig, which means she's creative, intelligent, and compassionate. She's also gullible. A fact that I take advantage of often.</p>
                         </div>
                     </div>
                 </div>
