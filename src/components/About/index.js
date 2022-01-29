@@ -47,7 +47,7 @@ const About = ({setView, ...props}) => {
                             <img src={michael} alt="Michael Lisboa" />
                         </div>
                         <div className="uk-card-body">
-                            <h2 style={{fontSize: "20px"}} className="uk-text-nowrap uk-margin-remove-vertical">Michael Lisboa</h2>
+                            <h2 style={{fontSize: "20px"}} className="uk-text-nowrap uk-margin-remove-vertical">Michael</h2>
                             <small className="uk-display-block">CREATIVE SILVER BULLET</small>
                             <p className="uk-text-small">I did all the funkin' code for this little app. I also bossed around Kathleen and Migs at all hours, even though they had a lot of client work to get done. I was born in the Year of the Metal Dog. That means I'm badass.</p>
                         </div>
@@ -60,7 +60,7 @@ const About = ({setView, ...props}) => {
                             <img src={kathleen} alt="Michael Lisboa" />
                         </div>
                         <div className="uk-card-body">
-                            <h2 style={{fontSize: "20px"}} className="uk-text-nowrap uk-margin-remove-vertical">Kathleen Irena</h2>
+                            <h2 style={{fontSize: "20px"}} className="uk-text-nowrap uk-margin-remove-vertical">Kathleen</h2>
                             <small className="uk-display-block">LEAD UX DESIGNER</small>
                             <p className="uk-text-small">Kathleen did all the illustrations. Nice huh? She was born in The Year of the Pig, which means she's creative, intelligent, and compassionate. She's also gullible. A fact that I take advantage of often.</p>
                         </div>
