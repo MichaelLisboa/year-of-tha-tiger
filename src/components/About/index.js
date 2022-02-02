@@ -42,7 +42,7 @@ const About = ({setView, ...props}) => {
         <div data-uk-slider>
             <div className="uk-slider-items uk-grid uk-grid-match uk-child-width-1-3@m">
                 <div>
-                    <div className={`uk-card uk-card-small uk-card-default uk-border-rounded`}>
+                    <div className="uk-card uk-card-small uk-card-default uk-border-rounded">
                         <div className="uk-card-media-top">
                             <img style={{borderRadius: "6px 6px 0 0"}} src={michael} alt="Michael Lisboa" />
                         </div>
