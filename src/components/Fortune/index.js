@@ -266,7 +266,13 @@ const Fortune = ({ setView, zodiac: data, images }) => {
                     <div className="uk-container uk-container-xsmall">
                         <img src={checkFortuneImage} alt="Check yo' fortune" />
                         <select
-                            style={{ fontSize: "1.2rem", height: "56px" }}
+                            style={{
+                                fontSize: "1.25rem",
+                                height: "56px",
+                                width: "100%",
+                                paddingLeft: "16px",
+                                paddingRight: "16px",
+                                color: "#666" }}
                             id="date-dropdown"
                             defaultValue="Choose your birth year"
                             onChange={handleChange}
