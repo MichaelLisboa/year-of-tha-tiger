@@ -454,6 +454,548 @@ template {
   --uk-breakpoint-xl: 1600px;
 }
 /* ========================================================================
+   Component: Form
+ ========================================================================== */
+/*
+ * 1. Define consistent box sizing.
+ *    Default is `content-box` with following exceptions set to `border-box`
+ *    `select`, `input[type="checkbox"]` and `input[type="radio"]`
+ *    `input[type="search"]` in Chrome, Safari and Opera
+ *    `input[type="color"]` in Firefox
+ * 2. Address margins set differently in Firefox/IE and Chrome/Safari/Opera.
+ * 3. Remove `border-radius` in iOS.
+ * 4. Change font properties to `inherit` in all browsers.
+ */
+.uk-input,
+.uk-select,
+.uk-textarea,
+.uk-radio,
+.uk-checkbox {
+  /* 1 */
+  box-sizing: border-box;
+  /* 2 */
+  margin: 0;
+  /* 3 */
+  border-radius: 0;
+  /* 4 */
+  font: inherit;
+}
+/*
+ * Show the overflow in Edge.
+ */
+.uk-input {
+  overflow: visible;
+}
+/*
+ * Remove the inheritance of text transform in Firefox.
+ */
+.uk-select {
+  text-transform: none;
+}
+/*
+ * 1. Change font properties to `inherit` in all browsers
+ * 2. Don't inherit the `font-weight` and use `bold` instead.
+ * NOTE: Both declarations don't work in Chrome, Safari and Opera.
+ */
+.uk-select optgroup {
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  font-weight: bold;
+}
+/*
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+.uk-textarea {
+  overflow: auto;
+}
+/*
+ * Remove the inner padding and cancel buttons in Chrome on OS X and Safari on OS X.
+ */
+.uk-input[type="search"]::-webkit-search-cancel-button,
+.uk-input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+/*
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+.uk-input[type="number"]::-webkit-inner-spin-button,
+.uk-input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+/*
+ * Removes placeholder transparency in Firefox.
+ */
+.uk-input::-moz-placeholder,
+.uk-textarea::-moz-placeholder {
+  opacity: 1;
+}
+/*
+ * Improves consistency of cursor style for clickable elements
+ */
+.uk-radio:not(:disabled),
+.uk-checkbox:not(:disabled) {
+  cursor: pointer;
+}
+/*
+ * Define consistent border, margin, and padding.
+ */
+.uk-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+/* Input, select and textarea
+ * Allowed: `text`, `password`, `datetime`, `datetime-local`, `date`,  `month`,
+            `time`, `week`, `number`, `email`, `url`, `search`, `tel`, `color`
+ * Disallowed: `range`, `radio`, `checkbox`, `file`, `submit`, `reset` and `image`
+ ========================================================================== */
+/*
+ * Remove default style in iOS.
+ */
+.uk-input,
+.uk-textarea {
+  -webkit-appearance: none;
+}
+/*
+ * 1. Prevent content overflow if a fixed width is used
+ * 2. Take the full width
+ * 3. Reset default
+ * 4. Style
+ */
+.uk-input,
+.uk-select,
+.uk-textarea {
+  /* 1 */
+  max-width: 100%;
+  /* 2 */
+  width: 100%;
+  /* 3 */
+  border: 0 none;
+  /* 4 */
+  padding: 0 10px;
+  background: #f8f8f8;
+  color: #666;
+}
+/*
+ * Single-line
+ * 1. Allow any element to look like an `input` or `select` element
+ * 2. Make sure line-height is not larger than height
+ *    Also needed to center the text vertically
+ */
+.uk-input,
+.uk-select:not([multiple]):not([size]) {
+  height: 40px;
+  vertical-align: middle;
+  /* 1 */
+  display: inline-block;
+}
+/* 2 */
+.uk-input:not(input),
+.uk-select:not(select) {
+  line-height: 40px;
+}
+/*
+ * Multi-line
+ */
+.uk-select[multiple],
+.uk-select[size],
+.uk-textarea {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  vertical-align: top;
+}
+/* Focus */
+.uk-input:focus,
+.uk-select:focus,
+.uk-textarea:focus {
+  outline: none;
+  background-color: #f8f8f8;
+  color: #666;
+}
+/* Disabled */
+.uk-input:disabled,
+.uk-select:disabled,
+.uk-textarea:disabled {
+  background-color: #f8f8f8;
+  color: #999;
+}
+/*
+ * Placeholder
+ */
+.uk-input::-ms-input-placeholder {
+  color: #999 !important;
+}
+.uk-input::placeholder {
+  color: #999;
+}
+.uk-textarea::-ms-input-placeholder {
+  color: #999 !important;
+}
+.uk-textarea::placeholder {
+  color: #999;
+}
+/* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
+ ========================================================================== */
+/*
+ * Small
+ */
+.uk-form-small {
+  font-size: 0.875rem;
+}
+.uk-form-small:not(textarea):not([multiple]):not([size]) {
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.uk-form-small:not(select):not(input):not(textarea) {
+  line-height: 30px;
+}
+/*
+ * Large
+ */
+.uk-form-large {
+  font-size: 1.25rem;
+}
+.uk-form-large:not(textarea):not([multiple]):not([size]) {
+  height: 55px;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.uk-form-large:not(select):not(input):not(textarea) {
+  line-height: 55px;
+}
+/* Style modifier (`uk-input`, `uk-select` and `uk-textarea`)
+ ========================================================================== */
+/*
+ * Error
+ */
+.uk-form-danger,
+.uk-form-danger:focus {
+  color: #d7504e;
+}
+/*
+ * Success
+ */
+.uk-form-success,
+.uk-form-success:focus {
+  color: #8bc34a;
+}
+/*
+ * Blank
+ */
+.uk-form-blank {
+  background: none;
+}
+/* Width modifiers (`uk-input`, `uk-select` and `uk-textarea`)
+ ========================================================================== */
+/*
+ * Fixed widths
+ * Different widths for mini sized `input` and `select` elements
+ */
+input.uk-form-width-xsmall {
+  width: 50px;
+}
+select.uk-form-width-xsmall {
+  width: 75px;
+}
+.uk-form-width-small {
+  width: 130px;
+}
+.uk-form-width-medium {
+  width: 200px;
+}
+.uk-form-width-large {
+  width: 500px;
+}
+/* Select
+ ========================================================================== */
+/*
+ * 1. Remove default style. Also works in Firefox
+ * 2. Style
+ * 3. Remove default style in IE 10/11
+ * 4. Set `color` for options in the select dropdown, because the inherited `color` might be too light.
+ */
+.uk-select:not([multiple]):not([size]) {
+  /* 1 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* 2 */
+  padding-right: 20px;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+}
+/* 3 */
+.uk-select:not([multiple]):not([size])::-ms-expand {
+  display: none;
+}
+/* 4 */
+.uk-select:not([multiple]):not([size]) option {
+  color: #444;
+}
+/*
+ * Disabled
+ */
+.uk-select:not([multiple]):not([size]):disabled {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23999%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23999%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+/* Datalist
+ ========================================================================== */
+/*
+ * 1. Remove default style in Chrome
+ */
+.uk-input[list] {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+}
+.uk-input[list]:hover,
+.uk-input[list]:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23666%22%20points%3D%2212%2012%208%206%2016%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+/* 1 */
+.uk-input[list]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+/* Radio and checkbox
+ * Note: Does not work in IE11
+ ========================================================================== */
+/*
+ * 1. Style
+ * 2. Make box more robust so it clips the child element
+ * 3. Vertical alignment
+ * 4. Remove default style
+ * 5. Fix black background on iOS
+ * 6. Center icons
+ */
+.uk-radio,
+.uk-checkbox {
+  /* 1 */
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  /* 2 */
+  overflow: hidden;
+  /* 3 */
+  margin-top: -4px;
+  vertical-align: middle;
+  /* 4 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* 5 */
+  background-color: #ebebeb;
+  /* 6 */
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.uk-radio {
+  border-radius: 50%;
+}
+/* Focus */
+.uk-radio:focus,
+.uk-checkbox:focus {
+  outline: none;
+}
+/*
+ * Checked
+ */
+.uk-radio:checked,
+.uk-checkbox:checked,
+.uk-checkbox:indeterminate {
+  background-color: #d689eb;
+}
+/* Focus */
+.uk-radio:checked:focus,
+.uk-checkbox:checked:focus,
+.uk-checkbox:indeterminate:focus {
+  background-color: #c75de4;
+}
+/*
+ * Icons
+ */
+.uk-radio:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+.uk-checkbox:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.uk-checkbox:indeterminate {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+/*
+ * Disabled
+ */
+.uk-radio:disabled,
+.uk-checkbox:disabled {
+  background-color: #f8f8f8;
+}
+.uk-radio:disabled:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23999%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+.uk-checkbox:disabled:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23999%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.uk-checkbox:disabled:indeterminate {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23999%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+/* Legend
+ ========================================================================== */
+/*
+ * Legend
+ * 1. Behave like block element
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 4. Style
+ */
+.uk-legend {
+  /* 1 */
+  width: 100%;
+  /* 2 */
+  color: inherit;
+  /* 3 */
+  padding: 0;
+  /* 4 */
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+/* Custom controls
+ ========================================================================== */
+/*
+ * 1. Container fits its content
+ * 2. Create position context
+ * 3. Prevent content overflow
+ * 4. Behave like most inline-block elements
+ */
+.uk-form-custom {
+  /* 1 */
+  display: inline-block;
+  /* 2 */
+  position: relative;
+  /* 3 */
+  max-width: 100%;
+  /* 4 */
+  vertical-align: middle;
+}
+/*
+ * 1. Position and resize the form control to always cover its container
+ * 2. Required for Firefox for positioning to the left
+ * 3. Required for Webkit to make `height` work
+ * 4. Hide controle and show cursor
+ * 5. Needed for the cursor
+ * 6. Clip height caused by 5. Needed for Webkit only
+ */
+.uk-form-custom select,
+.uk-form-custom input[type="file"] {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* 2 */
+  left: 0;
+  /* 3 */
+  -webkit-appearance: none;
+  /* 4 */
+  opacity: 0;
+  cursor: pointer;
+}
+.uk-form-custom input[type="file"] {
+  /* 5 */
+  font-size: 500px;
+  /* 6 */
+  overflow: hidden;
+}
+/* Label
+ ========================================================================== */
+/* Layout
+ ========================================================================== */
+/*
+ * Stacked
+ */
+.uk-form-stacked .uk-form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+/*
+ * Horizontal
+ */
+/* Tablet portrait and smaller */
+@media (max-width: 959px) {
+  /* Behave like `uk-form-stacked` */
+  .uk-form-horizontal .uk-form-label {
+    display: block;
+    margin-bottom: 10px;
+  }
+}
+/* Tablet landscape and bigger */
+@media (min-width: 960px) {
+  .uk-form-horizontal .uk-form-label {
+    width: 200px;
+    margin-top: 7px;
+    float: left;
+  }
+  .uk-form-horizontal .uk-form-controls {
+    margin-left: 215px;
+  }
+  /* Better vertical alignment if controls are checkboxes and radio buttons with text */
+  .uk-form-horizontal .uk-form-controls-text {
+    padding-top: 7px;
+  }
+}
+/* Icons
+ ========================================================================== */
+/*
+ * 1. Set position
+ * 2. Set width
+ * 3. Center icon vertically and horizontally
+ * 4. Style
+ */
+.uk-form-icon {
+  /* 1 */
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  /* 2 */
+  width: 40px;
+  /* 3 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* 4 */
+  color: #999;
+}
+/*
+ * Required for `a`.
+ */
+.uk-form-icon:hover {
+  color: #666;
+}
+/*
+ * Make `input` element clickable through icon, e.g. if it's a `span`
+ */
+.uk-form-icon:not(a):not(button):not(input) {
+  pointer-events: none;
+}
+/*
+ * Input padding
+ */
+.uk-form-icon:not(.uk-form-icon-flip) ~ .uk-input {
+  padding-left: 40px !important;
+}
+/*
+ * Position modifier
+ */
+.uk-form-icon-flip {
+  right: 0;
+  left: auto;
+}
+.uk-form-icon-flip ~ .uk-input {
+  padding-right: 40px !important;
+}
+/* ========================================================================
    Component: Button
  ========================================================================== */
 /*
@@ -4173,139 +4715,6 @@ td.uk-text-break {
   }
 }
 /* ========================================================================
-   Component: Visibility
- ========================================================================== */
-/*
- * Hidden
- * `hidden` attribute also set here to make it stronger
- */
-[hidden],
-.uk-hidden {
-  display: none !important;
-}
-/* Phone landscape and bigger */
-@media (min-width: 640px) {
-  .uk-hidden\@s {
-    display: none !important;
-  }
-}
-/* Tablet landscape and bigger */
-@media (min-width: 960px) {
-  .uk-hidden\@m {
-    display: none !important;
-  }
-}
-/* Desktop and bigger */
-@media (min-width: 1200px) {
-  .uk-hidden\@l {
-    display: none !important;
-  }
-}
-/* Large screen and bigger */
-@media (min-width: 1600px) {
-  .uk-hidden\@xl {
-    display: none !important;
-  }
-}
-/*
- * Visible
- */
-/* Phone portrait and smaller */
-@media (max-width: 639px) {
-  .uk-visible\@s {
-    display: none !important;
-  }
-}
-/* Phone landscape and smaller */
-@media (max-width: 959px) {
-  .uk-visible\@m {
-    display: none !important;
-  }
-}
-/* Tablet landscape and smaller */
-@media (max-width: 1199px) {
-  .uk-visible\@l {
-    display: none !important;
-  }
-}
-/* Desktop and smaller */
-@media (max-width: 1599px) {
-  .uk-visible\@xl {
-    display: none !important;
-  }
-}
-/* Visibility
- ========================================================================== */
-.uk-invisible {
-  visibility: hidden !important;
-}
-/* Toggle (Hover + Focus)
- ========================================================================== */
-/*
- * Hidden
- * 1. The toggle is triggered on touch devices using `:focus` and tabindex
- * 2. The target stays visible if any element within receives focus through keyboard
- *    Doesn't work in Edge, yet.
- * 3. Can't use `display: none` nor `visibility: hidden` because both are not focusable.
- *
- */
-/* 1 + 2 */
-.uk-visible-toggle:not(:hover):not(:focus) .uk-hidden-hover:not(:focus-within) {
-  /* 3 */
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden !important;
-}
-/*
- * Invisible
- */
-/* 1 + 2 */
-.uk-visible-toggle:not(:hover):not(:focus) .uk-invisible-hover:not(:focus-within) {
-  /* 3 */
-  opacity: 0 !important;
-}
-/*
- * 1. Prevent tab highlighting on iOS.
- */
-.uk-visible-toggle {
-  /* 1 */
-  -webkit-tap-highlight-color: transparent;
-}
-/*
- * Remove outline for `tabindex`
- */
-.uk-visible-toggle:focus {
-  outline: none;
-}
-/* Touch
- ========================================================================== */
-/*
- * Hide if primary pointing device has limited accuracy, e.g. a touch screen.
- * Works on mobile browsers: Safari, Chrome and Android browser
- */
-@media (pointer: coarse) {
-  .uk-hidden-touch {
-    display: none !important;
-  }
-}
-/*
- * Hide if primary pointing device is accurate, e.g. mouse.
- * 1. Fallback for IE11 and Firefox, because `pointer` is not supported
- * 2. Reset if supported
- */
-/* 1 */
-.uk-hidden-notouch {
-  display: none !important;
-}
-@media (pointer: coarse) {
-  .uk-hidden-notouch {
-    display: block !important;
-  }
-}
-/* ========================================================================
    Component: Inverse
  ========================================================================== */
 /*
@@ -4466,6 +4875,171 @@ td.uk-text-break {
 .uk-card-secondary > :not([class*='uk-card-media']) hr,
 .uk-card-secondary > :not([class*='uk-card-media']) .uk-hr {
   border-top-color: rgba(255, 255, 255, 0.2);
+}
+.uk-light .uk-input,
+.uk-light .uk-select,
+.uk-light .uk-textarea,
+.uk-card-primary.uk-card-body .uk-input,
+.uk-card-primary.uk-card-body .uk-select,
+.uk-card-primary.uk-card-body .uk-textarea,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-input,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-select,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-textarea,
+.uk-card-secondary.uk-card-body .uk-input,
+.uk-card-secondary.uk-card-body .uk-select,
+.uk-card-secondary.uk-card-body .uk-textarea,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-input,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-select,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-textarea {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  background-clip: padding-box;
+}
+.uk-light .uk-input:focus,
+.uk-light .uk-select:focus,
+.uk-light .uk-textarea:focus,
+.uk-card-primary.uk-card-body .uk-input:focus,
+.uk-card-primary.uk-card-body .uk-select:focus,
+.uk-card-primary.uk-card-body .uk-textarea:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-input:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-select:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-textarea:focus,
+.uk-card-secondary.uk-card-body .uk-input:focus,
+.uk-card-secondary.uk-card-body .uk-select:focus,
+.uk-card-secondary.uk-card-body .uk-textarea:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-input:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-select:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-textarea:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+}
+.uk-light .uk-input::-ms-input-placeholder,
+.uk-card-primary.uk-card-body .uk-input::-ms-input-placeholder,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-input::-ms-input-placeholder,
+.uk-card-secondary.uk-card-body .uk-input::-ms-input-placeholder,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-input::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.uk-light .uk-input::placeholder,
+.uk-card-primary.uk-card-body .uk-input::placeholder,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-input::placeholder,
+.uk-card-secondary.uk-card-body .uk-input::placeholder,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.uk-light .uk-textarea::-ms-input-placeholder,
+.uk-card-primary.uk-card-body .uk-textarea::-ms-input-placeholder,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-textarea::-ms-input-placeholder,
+.uk-card-secondary.uk-card-body .uk-textarea::-ms-input-placeholder,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-textarea::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.uk-light .uk-textarea::placeholder,
+.uk-card-primary.uk-card-body .uk-textarea::placeholder,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-textarea::placeholder,
+.uk-card-secondary.uk-card-body .uk-textarea::placeholder,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+.uk-light .uk-select:not([multiple]):not([size]),
+.uk-card-primary.uk-card-body .uk-select:not([multiple]):not([size]),
+.uk-card-primary > :not([class*='uk-card-media']) .uk-select:not([multiple]):not([size]),
+.uk-card-secondary.uk-card-body .uk-select:not([multiple]):not([size]),
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-select:not([multiple]):not([size]) {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20points%3D%2212%201%209%206%2015%206%22%20%2F%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20points%3D%2212%2013%209%208%2015%208%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.uk-light .uk-input[list]:hover,
+.uk-light .uk-input[list]:focus,
+.uk-card-primary.uk-card-body .uk-input[list]:hover,
+.uk-card-primary.uk-card-body .uk-input[list]:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-input[list]:hover,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-input[list]:focus,
+.uk-card-secondary.uk-card-body .uk-input[list]:hover,
+.uk-card-secondary.uk-card-body .uk-input[list]:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-input[list]:hover,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-input[list]:focus {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2224%22%20height%3D%2216%22%20viewBox%3D%220%200%2024%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22rgba%28255,%20255,%20255,%200.7%29%22%20points%3D%2212%2012%208%206%2016%206%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.uk-light .uk-radio,
+.uk-light .uk-checkbox,
+.uk-card-primary.uk-card-body .uk-radio,
+.uk-card-primary.uk-card-body .uk-checkbox,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-radio,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox,
+.uk-card-secondary.uk-card-body .uk-radio,
+.uk-card-secondary.uk-card-body .uk-checkbox,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-radio,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox {
+  background-color: rgba(242, 242, 242, 0.1);
+}
+.uk-light .uk-radio:checked,
+.uk-light .uk-checkbox:checked,
+.uk-light .uk-checkbox:indeterminate,
+.uk-card-primary.uk-card-body .uk-radio:checked,
+.uk-card-primary.uk-card-body .uk-checkbox:checked,
+.uk-card-primary.uk-card-body .uk-checkbox:indeterminate,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-radio:checked,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:checked,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate,
+.uk-card-secondary.uk-card-body .uk-radio:checked,
+.uk-card-secondary.uk-card-body .uk-checkbox:checked,
+.uk-card-secondary.uk-card-body .uk-checkbox:indeterminate,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-radio:checked,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:checked,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate {
+  background-color: #fff;
+}
+.uk-light .uk-radio:checked:focus,
+.uk-light .uk-checkbox:checked:focus,
+.uk-light .uk-checkbox:indeterminate:focus,
+.uk-card-primary.uk-card-body .uk-radio:checked:focus,
+.uk-card-primary.uk-card-body .uk-checkbox:checked:focus,
+.uk-card-primary.uk-card-body .uk-checkbox:indeterminate:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-radio:checked:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:checked:focus,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate:focus,
+.uk-card-secondary.uk-card-body .uk-radio:checked:focus,
+.uk-card-secondary.uk-card-body .uk-checkbox:checked:focus,
+.uk-card-secondary.uk-card-body .uk-checkbox:indeterminate:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-radio:checked:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:checked:focus,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate:focus {
+  background-color: #e6e6e6;
+}
+.uk-light .uk-radio:checked,
+.uk-card-primary.uk-card-body .uk-radio:checked,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-radio:checked,
+.uk-card-secondary.uk-card-body .uk-radio:checked,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-radio:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Ccircle%20fill%3D%22%23fff%22%20cx%3D%228%22%20cy%3D%228%22%20r%3D%222%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+.uk-light .uk-checkbox:checked,
+.uk-card-primary.uk-card-body .uk-checkbox:checked,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:checked,
+.uk-card-secondary.uk-card-body .uk-checkbox:checked,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:checked {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2214%22%20height%3D%2211%22%20viewBox%3D%220%200%2014%2011%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cpolygon%20fill%3D%22%23fff%22%20points%3D%2212%201%205%207.5%202%205%201%205.5%205%2010%2013%201.5%22%20%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.uk-light .uk-checkbox:indeterminate,
+.uk-card-primary.uk-card-body .uk-checkbox:indeterminate,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate,
+.uk-card-secondary.uk-card-body .uk-checkbox:indeterminate,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-checkbox:indeterminate {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Crect%20fill%3D%22%23fff%22%20x%3D%223%22%20y%3D%228%22%20width%3D%2210%22%20height%3D%221%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+.uk-light .uk-form-icon,
+.uk-card-primary.uk-card-body .uk-form-icon,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-form-icon,
+.uk-card-secondary.uk-card-body .uk-form-icon,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-form-icon {
+  color: rgba(255, 255, 255, 0.5);
+}
+.uk-light .uk-form-icon:hover,
+.uk-card-primary.uk-card-body .uk-form-icon:hover,
+.uk-card-primary > :not([class*='uk-card-media']) .uk-form-icon:hover,
+.uk-card-secondary.uk-card-body .uk-form-icon:hover,
+.uk-card-secondary > :not([class*='uk-card-media']) .uk-form-icon:hover {
+  color: rgba(255, 255, 255, 0.7);
 }
 .uk-light .uk-button-default,
 .uk-card-primary.uk-card-body .uk-button-default,
