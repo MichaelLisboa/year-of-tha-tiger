@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useSpring, animated as a, to as interpolate } from "react-spring";
+import { useSpring, animated as a } from "react-spring";
 import { useSpringCarousel } from 'react-spring-carousel-js'
-import { useGesture } from "@use-gesture/react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Preloader from "../Preloader";
 import style from "../HyperSwiper/Deck.module.css";
@@ -11,17 +10,17 @@ import background from "../../images/paper-bg.png";
 import next from "../../images/icons/arrow-right-white.svg";
 import prev from "../../images/icons/arrow-left-white.svg";
 
-const CarouselContainer = ({height, children}) => {
+const CarouselContainer = ({ height, children }) => {
     return (
         <div
-            style={{height: height*0.8}}
+            style={{ height: height * 0.8 }}
             className={`${style.deck}`}>
             {children}
         </div>
     )
 }
 
-const CarouselItem = ({height, children}) => {
+const CarouselItem = ({ children }) => {
     return (
         <div style={{
             width: "100%",
@@ -29,7 +28,7 @@ const CarouselItem = ({height, children}) => {
             borderRadius: "20px",
             touchAction: "pan-x"
         }}
-        className="uk-margin-right uk-margin-left">
+            className="uk-margin-right uk-margin-left">
             <div
                 style={{
                     height: "98.4%",
@@ -38,7 +37,7 @@ const CarouselItem = ({height, children}) => {
                     backgroundImage: `url(${background})`,
                 }}
                 className={`${style.fortuneCard}`}>
-                <div style={{height: "100%"}}>
+                <div style={{ height: "100%" }}>
                     {children}
                 </div>
             </div>
@@ -46,7 +45,7 @@ const CarouselItem = ({height, children}) => {
     )
 }
 
-const Fortune = ({setView, zodiac: data, images}) => {
+const Fortune = ({ setView, zodiac: data, images }) => {
     const { height } = useWindowDimensions();
     const [preloader, setPreloader] = useState(true)
     const [animal, setAnimal] = useState({})
@@ -55,124 +54,124 @@ const Fortune = ({setView, zodiac: data, images}) => {
     let dateDropdown;
 
     const {
-    carouselFragment,
-    slideToPrevItem,
-    slideToNextItem,
-  } = useSpringCarousel({
-     springConfig: {
-      tension: 500,
-      mass: 2,
-    },
-    initialActiveItem: 0,
-    withLoop: true,
-    items: [
-      {
-        id: "CarouselItem-1",
-        renderItem: (
-          <CarouselItem>
-            <div
-                style={{
-                    backgroundImage: `url('${image.current}')`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center center",
-                    height: "100%"
-                }} />
-          </CarouselItem>
-        )
-      },
-      {
-        id: "CarouselItem-2",
-        renderItem: (
-          <CarouselItem>
-            <div className={`uk-padding`}>
-                <div className="uk-text-center">
-                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
-                    <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
-                </div>
-                <div className="uk-margin-small-bottom">
-                    <p style={{lineHeight: "8px"}} className="uk-text-small uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</p>
-                    <div className="uk-margin-remove-vertical uk-padding-remove">
-                    {animal?.positive?.map((p, i) =>
-                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-pos-${i}`}>
-                            {p}
-                        </small>
-                    )}
-                    </div>
-                </div>
-                <div className="uk-margin-small-bottom">
-                    <p style={{lineHeight: "8px"}} className="uk-text-small uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</p>
-                    <div className="uk-margin-remove-vertical uk-padding-remove">
-                    {animal?.negative?.map((p, i) =>
-                        <small className="uk-margin-right uk-margin-remove-top uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-neg-${i}`}>
-                            {p}
-                        </small>
-                    )}
-                    </div>
-                </div>
-                <div><p className="scale-text">{animal?.language?.jive?.personality[0]}</p></div>
-            </div>
-          </CarouselItem>
-        )
-      },
-      {
-        id: "CarouselItem-3",
-        renderItem: (
-          <CarouselItem>
-            <div  className={`uk-padding`}>
-                <div className="uk-text-center">
-                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
-                    <h2 className="uk-margin-remove-top uk-padding-remove-top uk-text-nowrap">Funky Fortune</h2>
-                </div>
-                <div><p className="scale-text">{animal?.language?.jive?.forecast[0]}</p></div>
-            </div>
-          </CarouselItem>
-        )
-      },
-      {
-        id: "CarouselItem-4",
-        renderItem: (
-          <CarouselItem>
-            <div style={{height: "100%"}} className={`uk-padding`}>
-                <div className="uk-text-center">
-                    <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
-                    <h2 className="uk-margin-remove-top uk-padding-remove-top">Compatibility</h2>
-                </div>
-                <div className="uk-margin">
-                    {animal?.friends?.length >= 1 ?
-                    <div className="uk-grid uk-grid-small">
-                        <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
-                        {animal.friends.map((f, i) =>
-                            <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
-                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image}  alt={f.name} data-uk-img />
-                                <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+        carouselFragment,
+        slideToPrevItem,
+        slideToNextItem,
+    } = useSpringCarousel({
+        springConfig: {
+            tension: 500,
+            mass: 2,
+        },
+        initialActiveItem: 0,
+        withLoop: true,
+        items: [
+            {
+                id: "CarouselItem-1",
+                renderItem: (
+                    <CarouselItem>
+                        <div
+                            style={{
+                                backgroundImage: `url('${image.current}')`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundSize: "cover",
+                                backgroundPosition: "center center",
+                                height: "100%"
+                            }} />
+                    </CarouselItem>
+                )
+            },
+            {
+                id: "CarouselItem-2",
+                renderItem: (
+                    <CarouselItem>
+                        <div className={`uk-padding`}>
+                            <div className="uk-text-center">
+                                <h5 style={{ lineHeight: "8px" }} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
+                                <h2 className="uk-margin-remove-top uk-padding-remove-top">Personality</h2>
                             </div>
-                        )}
-                    </div>
-                    : null}
-                    {animal?.enemies?.length >= 1 ?
-                    <div className="uk-grid uk-grid-small uk-margin-top">
-                        <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
-                        {animal.enemies.map((f, i) =>
-                            <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
-                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image} alt={f.name} />
-                                <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                            <div className="uk-margin-small-bottom">
+                                <p style={{ lineHeight: "8px" }} className="uk-text-small uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Good</p>
+                                <div className="uk-margin-remove-vertical uk-padding-remove">
+                                    {animal?.positive?.map((p, i) =>
+                                        <small className="uk-margin-right uk-margin-remove-vertical uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-pos-${i}`}>
+                                            {p}
+                                        </small>
+                                    )}
+                                </div>
                             </div>
-                        )}
-                    </div>
-                    : null}
-                </div>
-            </div>
-          </CarouselItem>
-        )
-      },
-    ],
-  });
+                            <div className="uk-margin-small-bottom">
+                                <p style={{ lineHeight: "8px" }} className="uk-text-small uk-text-bold uk-margin-remove-bottom uk-padding-remove">Tha Bad</p>
+                                <div className="uk-margin-remove-vertical uk-padding-remove">
+                                    {animal?.negative?.map((p, i) =>
+                                        <small className="uk-margin-right uk-margin-remove-top uk-padding-remove uk-text-nowrap uk-text-uppercase" key={`${animal.name}-neg-${i}`}>
+                                            {p}
+                                        </small>
+                                    )}
+                                </div>
+                            </div>
+                            <div><p className="scale-text">{animal?.language?.jive?.personality[0]}</p></div>
+                        </div>
+                    </CarouselItem>
+                )
+            },
+            {
+                id: "CarouselItem-3",
+                renderItem: (
+                    <CarouselItem>
+                        <div className={`uk-padding`}>
+                            <div className="uk-text-center">
+                                <h5 style={{ lineHeight: "8px" }} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
+                                <h2 className="uk-margin-remove-top uk-padding-remove-top uk-text-nowrap">Funky Fortune</h2>
+                            </div>
+                            <div><p className="scale-text">{animal?.language?.jive?.forecast[0]}</p></div>
+                        </div>
+                    </CarouselItem>
+                )
+            },
+            {
+                id: "CarouselItem-4",
+                renderItem: (
+                    <CarouselItem>
+                        <div style={{ height: "100%" }} className={`uk-padding`}>
+                            <div className="uk-text-center">
+                                <h5 style={{ lineHeight: "8px" }} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
+                                <h2 className="uk-margin-remove-top uk-padding-remove-top">Compatibility</h2>
+                            </div>
+                            <div className="uk-margin">
+                                {animal?.friends?.length >= 1 ?
+                                    <div className="uk-grid uk-grid-small">
+                                        <h5 style={{ lineHeight: "24px" }} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
+                                        {animal.friends.map((f, i) =>
+                                            <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
+                                                <img style={{ border: "solid 3px #fff", borderRadius: "8px" }} className="uk-box-shadow-medium" src={f.image} alt={f.name} data-uk-img />
+                                                <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                                            </div>
+                                        )}
+                                    </div>
+                                    : null}
+                                {animal?.enemies?.length >= 1 ?
+                                    <div className="uk-grid uk-grid-small uk-margin-top">
+                                        <h5 style={{ lineHeight: "24px" }} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
+                                        {animal.enemies.map((f, i) =>
+                                            <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
+                                                <img style={{ border: "solid 3px #fff", borderRadius: "8px" }} className="uk-box-shadow-medium" src={f.image} alt={f.name} />
+                                                <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
+                                            </div>
+                                        )}
+                                    </div>
+                                    : null}
+                            </div>
+                        </div>
+                    </CarouselItem>
+                )
+            },
+        ],
+    });
 
     useEffect(
         () => {
             dateDropdown = document.getElementById('date-dropdown');
-            if(!dateDropdown) return;
+            if (!dateDropdown) return;
             while (dateDropdown.firstChild) {
                 dateDropdown.removeChild(dateDropdown.firstChild);
             }
@@ -189,7 +188,7 @@ const Fortune = ({setView, zodiac: data, images}) => {
                 dateOption.value = currentYear;
                 dateDropdown.add(dateOption);
                 currentYear -= 1;
-              }
+            }
         }, [preloader, selected]
     )
 
@@ -208,7 +207,7 @@ const Fortune = ({setView, zodiac: data, images}) => {
         let enemies = [];
 
         for (const [k, v] of Object.entries(pick[0])) {
-            if(k === "friends") {
+            if (k === "friends") {
                 v.map(f => {
                     friends.push({
                         friend: f,
@@ -216,7 +215,7 @@ const Fortune = ({setView, zodiac: data, images}) => {
                     })
                 })
             }
-            if(k === "enemies") {
+            if (k === "enemies") {
                 v.map(f => {
                     enemies.push({
                         friend: f,
@@ -236,7 +235,6 @@ const Fortune = ({setView, zodiac: data, images}) => {
             positive: pick[0].positive_traits
         }
 
-        console.log("DATA", animalData)
 
         setAnimal(animalData)
     }
@@ -253,7 +251,7 @@ const Fortune = ({setView, zodiac: data, images}) => {
         config: { mass: 1, tension: 600, friction: 50 },
     });
 
-    if(preloader) {
+    if (preloader) {
         return (
             <Preloader setPreloader={setPreloader} />
         )
@@ -263,12 +261,12 @@ const Fortune = ({setView, zodiac: data, images}) => {
         <>
             <a.div style={dateScreenStyle}>
                 <div
-                    style={{height: height}}
+                    style={{ height: height }}
                     className={`${style.deckContainer}`}>
                     <div className="uk-container uk-container-xsmall">
                         <img src={checkFortuneImage} alt="Check yo' fortune" />
                         <select
-                            style={{fontSize: "1.2rem", height: "56px"}}
+                            style={{ fontSize: "1.2rem", height: "56px" }}
                             id="date-dropdown"
                             defaultValue="Choose your birth year"
                             onChange={handleChange}
@@ -281,36 +279,36 @@ const Fortune = ({setView, zodiac: data, images}) => {
             <a.div
                 style={fortuneScreenStyle}>
                 <div
-                    style={{height: height}}
+                    style={{ height: height }}
                     className={`${style.fortuneContainer}`}>
                     {selected ?
-                    <CarouselContainer height={height}>
-                        {carouselFragment}
-                        <div className={`${style.swipeNav} uk-width-5-6 uk-margin-top`}>
-                            <button
-                                type="prev"
-                                onClick={slideToPrevItem}
-                                style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
-                                <img className="uk-light uk-svg" src={prev} alt="Previous" width="48" />
-                            </button>
-                            <button
-                                style={{borderStyle: "none", padding: "0"}}
-                                onClick={() => setSelected(false)}>
-                                <img src={reloadButton} width="80" alt="Reload" />
-                            </button>
-                            <button
-                                type="next"
-                                onClick={slideToNextItem}
-                                style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
-                                <img src={next} width="48" alt="Next" />
-                            </button>
-                        </div>
-                    </CarouselContainer>
-                    : null}
+                        <CarouselContainer height={height}>
+                            {carouselFragment}
+                            <div className={`${style.swipeNav} uk-width-5-6 uk-margin-top`}>
+                                <button
+                                    type="prev"
+                                    onClick={slideToPrevItem}
+                                    style={{ borderStyle: "none", padding: "0", opacity: "0.7" }}>
+                                    <img className="uk-light uk-svg" src={prev} alt="Previous" width="48" />
+                                </button>
+                                <button
+                                    style={{ borderStyle: "none", padding: "0" }}
+                                    onClick={() => setSelected(false)}>
+                                    <img src={reloadButton} width="80" alt="Reload" />
+                                </button>
+                                <button
+                                    type="next"
+                                    onClick={slideToNextItem}
+                                    style={{ borderStyle: "none", padding: "0", opacity: "0.7" }}>
+                                    <img src={next} width="48" alt="Next" />
+                                </button>
+                            </div>
+                        </CarouselContainer>
+                        : null}
                 </div>
             </a.div>
         </>
-        );
-    }
+    );
+}
 
 export default Fortune;
