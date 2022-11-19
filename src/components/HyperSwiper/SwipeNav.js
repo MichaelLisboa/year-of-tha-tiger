@@ -1,10 +1,9 @@
 import React from "react";
 import style from "./Deck.module.css";
-import reloadButton from "../../images/reload.png";
 import next from "../../images/icons/arrow-right-white.svg";
 import prev from "../../images/icons/arrow-left-white.svg";
 
-export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isEmpty}) {
+export default function SwipeNav({cardIndex, forceSwipe}) {
     return (
         cardIndex > -1 ?
         <div className={`${style.swipeNav}`}>
@@ -18,7 +17,7 @@ export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isE
                           }
                         }}
                         >
-                        <img src={prev} width="48" data-uk-svg />
+                        <img src={prev} width="48" />
                     </button>
                 </div>
                 <div>
@@ -31,7 +30,7 @@ export default function SwipeNav({deck, cardIndex, bind, forceSwipe, height, isE
                           }
                         }}
                     >
-                        <img src={next} width="48" data-uk-svg />
+                        <img src={next} width="48" />
                     </button>
                 </div>
         </div>

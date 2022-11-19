@@ -289,12 +289,12 @@ const Fortune = ({ setView, zodiac: data, images }) => {
                                     type="prev"
                                     onClick={slideToPrevItem}
                                     style={{ borderStyle: "none", padding: "0", opacity: "0.7" }}>
-                                    <img className="uk-light uk-svg" src={prev} alt="Previous" width="48" />
+                                    <img src={prev} alt="Previous" width="48" />
                                 </button>
                                 <button
                                     style={{ borderStyle: "none", padding: "0" }}
                                     onClick={() => setSelected(false)}>
-                                    <img src={reloadButton} width="80" alt="Reload" />
+                                    <img src={reloadButton} width="128" alt="Reload" />
                                 </button>
                                 <button
                                     type="next"
