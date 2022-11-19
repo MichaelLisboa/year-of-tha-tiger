@@ -46,7 +46,7 @@ const CarouselItem = ({height, children}) => {
     )
 }
 
-const Fortune = ({setView, zodiac: data, images, ...props}) => {
+const Fortune = ({setView, zodiac: data, images}) => {
     const { height } = useWindowDimensions();
     const [preloader, setPreloader] = useState(true)
     const [animal, setAnimal] = useState({})
@@ -110,7 +110,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     )}
                     </div>
                 </div>
-                <div><p className="scale-text">{animal?.language?.english?.personality[0]}</p></div>
+                <div><p className="scale-text">{animal?.language?.jive?.personality[0]}</p></div>
             </div>
           </CarouselItem>
         )
@@ -124,7 +124,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     <h5 style={{lineHeight: "8px"}} className="uk-text-bold uk-text-small uk-margin-remove-bottom uk-padding-remove-bottom uk-text-uppercase">{animal?.name}'s</h5>
                     <h2 className="uk-margin-remove-top uk-padding-remove-top uk-text-nowrap">Funky Fortune</h2>
                 </div>
-                <div><p className="scale-text">{animal?.language?.english?.forecast[0]}</p></div>
+                <div><p className="scale-text">{animal?.language?.jive?.forecast[0]}</p></div>
             </div>
           </CarouselItem>
         )
@@ -144,7 +144,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                         <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} gets groovy wit'</h5>
                         {animal.friends.map((f, i) =>
                             <div key={`friend-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.friends.length}`}>
-                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image} data-uk-img />
+                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image}  alt={f.name} data-uk-img />
                                 <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
@@ -155,7 +155,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                         <h5 style={{lineHeight: "24px"}} className="uk-text-bold uk-width-1-1 uk-margin-remove-vertical">{animal.name} ain't down wit'</h5>
                         {animal.enemies.map((f, i) =>
                             <div key={`enemy-${i}`} className={`uk-margin-remove uk-text-center uk-width-1-${animal.enemies.length}`}>
-                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image} data-uk-img />
+                                <img style={{border: "solid 3px #fff", borderRadius: "8px"}} className="uk-box-shadow-medium" src={f.image} alt={f.name} />
                                 <small className="uk-margin-remove-vertical uk-text-bold uk-display-block uk-text-center">{f.friend}</small>
                             </div>
                         )}
@@ -266,7 +266,7 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                     style={{height: height}}
                     className={`${style.deckContainer}`}>
                     <div className="uk-container uk-container-xsmall">
-                        <img src={checkFortuneImage} />
+                        <img src={checkFortuneImage} alt="Check yo' fortune" />
                         <select
                             style={{fontSize: "1.2rem", height: "56px"}}
                             id="date-dropdown"
@@ -291,18 +291,18 @@ const Fortune = ({setView, zodiac: data, images, ...props}) => {
                                 type="prev"
                                 onClick={slideToPrevItem}
                                 style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
-                                <img className="uk-light uk-svg" src={prev} width="48" />
+                                <img className="uk-light uk-svg" src={prev} alt="Previous" width="48" />
                             </button>
                             <button
                                 style={{borderStyle: "none", padding: "0"}}
                                 onClick={() => setSelected(false)}>
-                                <img src={reloadButton} width="80" />
+                                <img src={reloadButton} width="80" alt="Reload" />
                             </button>
                             <button
                                 type="next"
                                 onClick={slideToNextItem}
                                 style={{borderStyle: "none", padding: "0", opacity: "0.7"}}>
-                                <img src={next} width="48" />
+                                <img src={next} width="48" alt="Next" />
                             </button>
                         </div>
                     </CarouselContainer>

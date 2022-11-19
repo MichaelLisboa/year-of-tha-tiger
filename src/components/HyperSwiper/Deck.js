@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useSprings, animated as a, to as interpolate } from "react-spring";
 import { useGesture } from "@use-gesture/react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
@@ -28,7 +28,7 @@ const from = i => ({
     y: -2000
 });
 
-const Deck = ({preload, cards, isEmpty, setIsEmpty, images, setView}) => {
+const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
     const { height } = useWindowDimensions();
     const [isSwiped, setIsSwiped] = useState({dir: 0, value: ""});
     const [card, setCard] = useState(cards.length-1);
@@ -132,7 +132,8 @@ const Deck = ({preload, cards, isEmpty, setIsEmpty, images, setView}) => {
                         onClick={() => setView("fortune")}>
                         <img
                             style={{backgroundColor: "rgb(163, 41, 37)", border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer"}}
-                            src={checkFortuneImage} />
+                            src={checkFortuneImage}
+                            alt="" />
                     </div>
                     <div className="uk-width-1-1 uk-light uk-text-center uk-text-small uk-margin-large-top uk-margin-medium-bottom">or</div>
                     <div className="uk-width-1-1 uk-display-block uk-text-center">

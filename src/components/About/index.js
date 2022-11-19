@@ -1,34 +1,12 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useSpring, animated as a, to as interpolate } from "react-spring";
-import { useSpringCarousel } from 'react-spring-carousel-js'
-import { useGesture } from "@use-gesture/react";
+import React, { useState } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import Preloader from "../Preloader";
-import style from "../HyperSwiper/Deck.module.css";
-import checkFortuneImage from "../../images/check-fortune-button.png";
-import background from "../../images/paper-bg.png";
 import michael from "../../images/michael.png";
 import migs from "../../images/migs.png";
 import kathleen from "../../images/kathleen.png";
 
-const About = ({setView, ...props}) => {
-    const { height } = useWindowDimensions();
+const About = () => {
     const [preloader, setPreloader] = useState(true)
-
-    // useEffect(
-    //     () => {
-    //         try {
-    //             let timer1 = setTimeout(() => {
-    //
-    //             }, 1000)
-    //             return () => {
-    //                 clearTimeout(timer1)
-    //             }
-    //         } catch (e) {
-    //             console.error("ONLOAD LAYOUT ERROR", e, e.response);
-    //         }
-    //     }, []
-    // )
 
 
     if(preloader) {

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useSpring, animated as a } from "react-spring";
 import style from "../HyperSwiper/Deck.module.css";
 import loading from "../../images/loading.png";
-import checkFortuneImage from "../../images/check-fortune-button.png"
 
 
 const Preloader = ({setPreloader, ...props}) => {
