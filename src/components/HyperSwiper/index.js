@@ -3,12 +3,11 @@ import Preloader from "../Preloader"
 import Deck from "./Deck";
 
 async function fetchCards(data) {
-    const cardData = data;
-    const res = await cardData
+    const res = await data
     return res
 }
 
-const HyperSwiper = ({preload, setView, zodiac: data, images, ...props}) => {
+const HyperSwiper = ({preload, setView, zodiac: data, images}) => {
     const [cards, setCards] = useState({})
     const [isEmpty, setIsEmpty] = useState(true);
     const [preloader, setPreloader] = useState(true)
@@ -19,8 +18,8 @@ const HyperSwiper = ({preload, setView, zodiac: data, images, ...props}) => {
             fetchCards(data)
             .then(result => {
                 const characters = result.sort(function (a, b) { return b.chapter - a.chapter; });
-                setCards(characters)
-                setIsEmpty(false)
+                setCards(characters);
+                setIsEmpty(false);
             })
             .catch(err => {
                 console.log("FAILED", err)
@@ -35,14 +34,18 @@ const HyperSwiper = ({preload, setView, zodiac: data, images, ...props}) => {
     }
 
     return (
-        !preload ?
-        cards.length ?
-            <Deck preload={preload} cards={cards} isEmpty={isEmpty} setIsEmpty={setIsEmpty} images={images} setView={setView} />
+        !preload && cards.length ?
+            <Deck
+                preload={preload}
+                cards={cards} 
+                isEmpty={isEmpty}
+                setIsEmpty={setIsEmpty}
+                images={images}
+                setView={setView} />
             :
             <div style={{height: "100vh", display: "flex", alignItems: "center", justifyContent: "center"}}>
                 <small style={{color: "#fff"}}>loading</small>
             </div>
-        : null
     )
 }
 

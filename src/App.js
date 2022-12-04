@@ -137,7 +137,6 @@ const App = () => {
                 <Fortune setView={setView} zodiac={zodiac} images={images} />
                 : <About setView={setView} />
             }
-            {/*prompt && <InstallPWA />*/}
             {preloadImages && preloadImages?.length ?
             <div
                 style={{
@@ -154,6 +153,7 @@ const App = () => {
             </div>
             : null }
         </main>
+        {prompt ? <InstallPWA /> : null}
         </>
         );
     }

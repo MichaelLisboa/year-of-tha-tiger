@@ -1,12 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import { useSpring, animated as a, to as interpolate } from "react-spring";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 import style from "./Deck.module.css";
 const trans = (r, s) => `perspective(1500px) rotateX(5deg) rotateY(${r/10}deg) rotateZ(${r}deg) scale(${s})`;
 
-const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHeight, images}) => {
+const Card = ({
+    bind,
+    current,
+    card,
+    rot,
+    scale,
+    height: viewportHeight,
+    images
+  }) => {
+    const { width } = useWindowDimensions();
     const [storyExpanded, setStoryExpanded] = useState(false);
-    const image = Object.values(images).filter(i => i.includes(card.name))
+    const image = useMemo(
+        () => Object.values(images).filter(i => i.includes(card.name)),
+        [images, card]
+      );
+    const handleClick = useCallback(() => setStoryExpanded(!storyExpanded), [storyExpanded]);
+
+    useEffect(
+        () => {
+          const footerElement = document.querySelector('.view-story');
+          footerElement.addEventListener('click', handleClick);
+          return () => {
+            footerElement.removeEventListener('click', handleClick);
+          };
+        },
+        [handleClick]
+      );
 
     const {height} = useSpring({
         height: storyExpanded ? "60%" : "8%",
@@ -50,8 +75,8 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                             cursor: "pointer",
                             height
                         }}
-                        onClick={() => setStoryExpanded(!storyExpanded)}
-                        className={`${style.cardBody} uk-flex uk-flex-column uk-flex-middle`}>
+                        onClick={handleClick}
+                        className={`${style.cardBody} view-story uk-flex uk-flex-column uk-flex-middle`}>
                         <p
                             style={{
                                 position: "relative",
@@ -67,7 +92,7 @@ const Card = ({bind, current, active, card, gone, rot, scale, height: viewportHe
                             {storyExpanded ?
                                 <span>Hide {card.name}'s story</span>
                                 :
-                                <span>{window.innerWidth <= 640 ? "Tap" : "Click"} fo' {card.name}'s story</span>
+                                <span>{width <= 640 ? "Tap" : "Click"} fo' {card.name}'s story</span>
                             }
                             </p>
                         <a.div style={animalStory} className="uk-flex uk-flex-column uk-flex-middle uk-flex-center">

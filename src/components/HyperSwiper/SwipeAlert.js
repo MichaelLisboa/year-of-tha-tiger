@@ -26,17 +26,17 @@ export default function SwipeAlert({
         tension: 400,
         friction: 40
     },
-    choice,
-    isSwiped
+    choice
 }) {
     const trans = useSpring({
         from: {
             top: "120%",
-            opacity: 0.8
+            opacity: 0
         },
         to: async next => {
             await next({
-                delay: 200
+                delay: 200,
+                opacity: 0
             })
             await next({
                 top: "-10%",
@@ -57,7 +57,7 @@ export default function SwipeAlert({
     return (
         choice.value &&
         <a.div className={`${style.swipeAlert} ${choice.dir === 1 ? style.swipeLike : style.swipePass}`} style={trans}>
-            {choice.dir === 1 ?
+            {choice.dir === 0 ?
             <img
                 src={love()}
                 alt={choice.value}

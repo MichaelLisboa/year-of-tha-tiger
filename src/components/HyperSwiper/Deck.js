@@ -126,7 +126,9 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
                          />
                     </a.div>
                 )}
-                <div className="uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center">
+                {gone.size !== 0 &&
+                <div
+                    className={`uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center`}>
                     <div
                         className="uk-width-1-1 uk-display-block uk-box-shadow-medium uk-box-shadow-hover-large"
                         onClick={() => setView("fortune")}>
@@ -140,9 +142,10 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
                         <button
                             style={{color: "#fff", fontSize: "0.85rem"}}
                             onClick={() => setIsEmpty(true)} className="uk-button uk-button-small uk-button-text uk-text-uppercase">
-                            start the story again</button>
+                            Start the story again</button>
                     </div>
                 </div>
+                }
             </div>
             <SwipeNav
                 deck={cards}
