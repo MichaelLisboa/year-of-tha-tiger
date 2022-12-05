@@ -37,7 +37,7 @@ p {
 @media screen and (min-height: 920px) {
   p,
   .scale-text {
-    font-size: 1.3em;
+    font-size: 1.25em;
   }
 }
 

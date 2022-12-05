@@ -28,12 +28,12 @@ const from = i => ({
     y: -2000
 });
 
-const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
+const Deck = ({ cards, isEmpty, setIsEmpty, images, setView }) => {
     const { height } = useWindowDimensions();
-    const [isSwiped, setIsSwiped] = useState({dir: 0, value: ""});
-    const [card, setCard] = useState(cards.length-1);
+    const [isSwiped, setIsSwiped] = useState({ dir: 0, value: "" });
+    const [card, setCard] = useState(cards.length - 1);
     const [gone] = useState(() => new Set());
-    const [active] = useState(() => new Set([card, card-1]));
+    const [active] = useState(() => new Set([card, card - 1]));
 
     async function GetActiveCard(gone, dir) {
         setIsSwiped({
@@ -41,8 +41,8 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
             dir: dir,
             value: dir === 1 ? "like" : "pass"
         });
-        setCard(card-1);
-        active.delete(card+1);
+        setCard(card - 1);
+        active.delete(card + 1);
         const res = await card
         return res;
     }
@@ -77,11 +77,11 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
     const forceSwipe = dir => {
         gone.add(card);
         const down = false;
-        const {xDelta, velocity} = 0;
+        const { xDelta, velocity } = 0;
         setSpring.start(i => {
             if (card !== i) return;
             const isGone = gone.has(card);
-            const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0 ;
+            const x = isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0;
             const rot = xDelta / 100 + (isGone ? dir * 10 * velocity : 0);
             const scale = down ? 1.1 : 1;
             return { x, rot, scale, delay: undefined, config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 } }
@@ -90,18 +90,18 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
     }
 
     active.add(card);
-    active.add(card-1);
+    active.add(card - 1);
 
-    if(cards.length === 0) {
+    if (cards.length === 0) {
         return <div />
     }
 
     return (
         <div
-            style={{height: height}}
+            style={{ height: height }}
             className={`${style.deckContainer}`}>
             <div
-                style={{height: height*0.7, marginTop: "24px"}}
+                style={{ height: height * 0.7, marginTop: "24px" }}
                 className={`${style.deck}`}>
                 <SwipeAlert
                     isSwiped={isSwiped}
@@ -122,29 +122,29 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
                             images={images}
                             rot={rot}
                             scale={scale}
-                            height={height*0.7}
-                         />
+                            height={height * 0.7}
+                        />
                     </a.div>
                 )}
-                {gone.size !== 0 &&
-                <div
-                    className={`uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center`}>
+                {gone.size === cards.length &&
                     <div
-                        className="uk-width-1-1 uk-display-block uk-box-shadow-medium uk-box-shadow-hover-large"
-                        onClick={() => setView("fortune")}>
-                        <img
-                            style={{backgroundColor: "rgb(163, 41, 37)", border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer"}}
-                            src={checkFortuneImage}
-                            alt="" />
+                        className={`uk-container uk-container-expand uk-margin-large-top uk-height-large uk-flex uk-flex-column uk-flex-middle uk-flex-center`}>
+                        <div
+                            className="uk-width-1-1 uk-display-block uk-box-shadow-medium uk-box-shadow-hover-large"
+                            onClick={() => setView("fortune")}>
+                            <img
+                                style={{ backgroundColor: "rgb(163, 41, 37)", border: "1px solid rgb(255, 204, 214)", borderRadius: "16px", cursor: "pointer" }}
+                                src={checkFortuneImage}
+                                alt="" />
+                        </div>
+                        <div className="uk-width-1-1 uk-light uk-text-center uk-text-small uk-margin-large-top uk-margin-medium-bottom">or</div>
+                        <div className="uk-width-1-1 uk-display-block uk-text-center">
+                            <button
+                                style={{ color: "#fff", fontSize: "0.85rem" }}
+                                onClick={() => setIsEmpty(true)} className="uk-button uk-button-small uk-button-text uk-text-uppercase">
+                                Start the story again</button>
+                        </div>
                     </div>
-                    <div className="uk-width-1-1 uk-light uk-text-center uk-text-small uk-margin-large-top uk-margin-medium-bottom">or</div>
-                    <div className="uk-width-1-1 uk-display-block uk-text-center">
-                        <button
-                            style={{color: "#fff", fontSize: "0.85rem"}}
-                            onClick={() => setIsEmpty(true)} className="uk-button uk-button-small uk-button-text uk-text-uppercase">
-                            Start the story again</button>
-                    </div>
-                </div>
                 }
             </div>
             <SwipeNav
@@ -153,7 +153,7 @@ const Deck = ({cards, isEmpty, setIsEmpty, images, setView}) => {
                 bind={bind}
                 forceSwipe={forceSwipe}
                 isEmpty={isEmpty}
-                height={height*0.4} />
+                height={height * 0.4} />
         </div>
     )
 }
